@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">sana</string>
+
+    <string-array name="gender_arrays">
+        <item>جنسیت</item>
+        <item>زن</item>
+        <item>مرد</item>
+        <item>اختلال جنسیتی</item>
+        <item>نامعلوم</item>
+    </string-array>
+
+    <string-array name="marage_arrays">
+        <item>وضعیت تاهل</item>
+        <item>مجرد</item>
+        <item>متاهل</item>
+        <item>جداشده</item>
+    </string-array>
+
+    <string-array name="school_arrays">
+        <item>تحصیلات</item>
+        <item>بیسواد</item>
+        <item>زیر دیپلم</item>
+        <item>دیپلم</item>
+        <item>لیسانس</item>
+        <item>فوق لیسانس</item>
+        <item>دکتری و بالاتر</item>
+    </string-array>
+
+</resources>
