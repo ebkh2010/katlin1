@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activitis.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -110,6 +110,18 @@
                         android:layout_marginRight="70dp"
                         android:layout_marginLeft="70dp"/>
 
+                    <EditText
+                        android:id="@+id/estelam_fard_job"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:text="شغل"
+                        android:layout_marginRight="70dp"
+                        android:layout_marginLeft="70dp"/>
+
+
                     <Spinner
                         android:id="@+id/marage"
                         android:layout_width="match_parent"
@@ -127,26 +139,6 @@
                         android:layout_marginRight="70dp"
                         android:layout_weight="1.03"
                         android:entries="@array/school_arrays"/>
-
-<!--                    <EditText-->
-<!--                        android:id="@+id/estelam_fard_Gender"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="match_parent"-->
-<!--                        android:layout_weight="1"-->
-<!--                        android:ems="10"-->
-<!--                        android:inputType="textPersonName"-->
-<!--                        android:text="جنسیت"-->
-<!--                        android:layout_marginRight="70dp"-->
-<!--                        android:layout_marginLeft="70dp"/>-->
-
-                    <Spinner
-                        android:id="@+id/spinner"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="70dp"
-                        android:layout_marginRight="70dp"
-                        android:layout_weight="1.03"
-                        android:entries="@array/gender_arrays"/>
 
                     <ImageView
                         android:id="@+id/imageView8"

@@ -1,12 +1,14 @@
-package ir.ebkh.sana
+package ir.ebkh.sana.activitis.estelam
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import ir.ebkh.sana.R
 
-class MainActivity : AppCompatActivity() {
+class ActivityEstelam : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.estelam)
+
     }
 }
