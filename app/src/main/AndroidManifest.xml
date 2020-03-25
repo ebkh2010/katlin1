@@ -8,11 +8,15 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:launchMode="singleTask"
+        >
 
 
 
-        <activity android:name=".activitis.Activitylogin">
+        <activity
+            android:name=".activitis.Activitylogin"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,10 +24,14 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activitis.estelam.ActivityEstelam">
+        <activity
+            android:name=".activitis.estelam.ActivityEstelam"
+            >
         </activity>
 
-        <activity android:name=".activitis.estelam.ActivityEstelamFard">
+        <activity
+            android:name=".activitis.estelam.ActivityEstelamFard"
+            >
         </activity>
 
         <activity android:name=".activitis.sabt.ActivitySabteFard">

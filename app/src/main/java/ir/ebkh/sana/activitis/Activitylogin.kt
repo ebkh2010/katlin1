@@ -16,7 +16,6 @@ class Activitylogin : AppCompatActivity() {
         val btn = btn_login
         btn.setOnClickListener {
             val intent = Intent(this, ActivityEstelam::class.java)
-            // start your next activity
             startActivity(intent)
         }
     }
