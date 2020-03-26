@@ -14,7 +14,7 @@ class ActivityEstelam : AppCompatActivity() {
         setContentView(R.layout.estelam)
 
 
-        estelam_fard.setOnClickListener {
+        btn_estelam_fard.setOnClickListener {
             val intent = Intent(this, ActivityEstelamFard::class.java)
             startActivity(intent)
         }
