@@ -13,14 +13,14 @@ class ActivityEstelam : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.estelam)
 
-        val btn_fard = estelam_fard
-        btn_fard.setOnClickListener {
+
+        estelam_fard.setOnClickListener {
             val intent = Intent(this, ActivityEstelamFard::class.java)
             startActivity(intent)
         }
 
-        val btn_newsana = new_sana
-        btn_newsana.setOnClickListener {
+
+        new_sana.setOnClickListener {
             val intent = Intent(this, ActivitySabteTakhalof::class.java)
             startActivity(intent)
         }

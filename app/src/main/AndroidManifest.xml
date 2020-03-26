@@ -43,6 +43,9 @@
         <activity android:name=".activitis.sabt.ActivitySabteTakhalof">
         </activity>
 
+        <activity android:name=".activitis.sabt.ActivitySabteTakhalof2">
+        </activity>
+
     </application>
 
 </manifest>

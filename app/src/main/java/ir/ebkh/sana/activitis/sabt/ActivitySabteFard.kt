@@ -13,8 +13,7 @@ class ActivitySabteFard : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.sabt_fard)
 
-        val btn_sabtfard2 = btn_estelam_fard
-        btn_sabtfard2.setOnClickListener {
+        btn_estelam_fard.setOnClickListener {
             val intent = Intent(this, ActivitySabteFard2::class.java)
             startActivity(intent)
         }
