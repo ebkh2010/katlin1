@@ -193,4 +193,35 @@
         <item>30</item>
         <item>31</item>
     </string-array>
+
+    <string-array name="persons">
+        <item>افراد</item>
+        <item>حسن حسینی</item>
+        <item>حسین حسنی</item>
+        <item>عباس غنوی</item>
+        <item>ابراهیم خرمی</item>
+        <item>احسان کرمی</item>
+        <item>امید دانا</item>
+        <item>خسرو شکیبایی</item>
+
+    </string-array>
+
+    <string-array name="cars">
+        <item>انتخاب خودرو</item>
+        <item>۱۲۳د۱۲ایران۱۶</item>
+        <item>۲۳۴ب۲۳ایران۲۲</item>
+        <item>۹۹۷غ۹۸ایران۶۶</item>
+        <item>۷۶۳ح۳۴ایران۴۳</item>
+        <item>۵۴۶ص۸۴ایران۶۵</item>
+    </string-array>
+
+    <string-array name="motors">
+        <item>انتخاب موتورسیکلت</item>
+        <item>۱۲۳د۱۲ایران۱۶</item>
+        <item>۲۳۴ب۲۳ایران۲۲</item>
+        <item>۹۹۷غ۹۸ایران۶۶</item>
+        <item>۷۶۳ح۳۴ایران۴۳</item>
+        <item>۵۴۶ص۸۴ایران۶۵</item>
+    </string-array>
+
 </resources>

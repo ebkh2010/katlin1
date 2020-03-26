@@ -13,7 +13,7 @@ class ActivitySabteTakhalof2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.sabt_takhalof2)
 
-        btn_sabtetakhalof3.setOnClickListener {
+        btn_sabtetakhalof2.setOnClickListener {
             val intent = Intent(this, ActivitySabteTakhalof3::class.java)
             startActivity(intent)
         }
