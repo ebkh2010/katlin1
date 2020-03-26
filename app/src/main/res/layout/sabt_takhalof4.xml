@@ -174,7 +174,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <ImageView
-                android:id="@+id/btn_sabtetakhalo4"
+                android:id="@+id/btn_sabtetakhalof4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="15dp"

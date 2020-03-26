@@ -17,8 +17,8 @@ class ActivitySabteTakhalof3 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.sabt_takhalof3)
 
-        searchablespinner.setTitle("Select Item")
-        searchablespinner.setPositiveButton("OK")
+        searchablespinner.setTitle("جستجو و انتخاب کنید")
+        searchablespinner.setPositiveButton("تایید")
 
         btn_sabtetakhalof3.setOnClickListener {
             val intent = Intent(this, ActivitySabteTakhalof4::class.java)

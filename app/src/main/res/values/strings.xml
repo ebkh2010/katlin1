@@ -195,7 +195,7 @@
     </string-array>
 
     <string-array name="persons">
-        <item>افراد</item>
+        <item>انتخاب افراد</item>
         <item>حسن حسینی</item>
         <item>حسین حسنی</item>
         <item>عباس غنوی</item>
@@ -222,6 +222,15 @@
         <item>۹۹۷غ۹۸ایران۶۶</item>
         <item>۷۶۳ح۳۴ایران۴۳</item>
         <item>۵۴۶ص۸۴ایران۶۵</item>
+    </string-array>
+
+    <string-array name="places">
+        <item>انتخاب مکان تخلف</item>
+        <item>ساختمان سینا</item>
+        <item>ساختمان بدر</item>
+        <item>مجتمع یاس</item>
+        <item>پارک علوی</item>
+        <item>تالار کوروش</item>
     </string-array>
 
 </resources>

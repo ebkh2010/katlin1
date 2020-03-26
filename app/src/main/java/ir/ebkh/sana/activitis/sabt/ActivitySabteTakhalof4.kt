@@ -1,5 +1,6 @@
 package ir.ebkh.sana.activitis.sabt
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import ir.ebkh.sana.R
@@ -14,13 +15,18 @@ class ActivitySabteTakhalof4 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.sabt_takhalof3)
+        setContentView(R.layout.sabt_takhalof4)
 
-        searchablespinner_add_car.setTitle("Select Item")
-        searchablespinner_add_car.setPositiveButton("OK")
+        searchablespinner_add_car.setTitle("جستجو و انتخاب کنید")
+        searchablespinner_add_car.setPositiveButton("تایید")
 
-        searchablespinner_add_motor.setTitle("Select Item")
-        searchablespinner_add_motor.setPositiveButton("OK")
+        searchablespinner_add_motor.setTitle("جستجو و انتخاب کنید")
+        searchablespinner_add_motor.setPositiveButton("تایید")
 
+
+        btn_sabtetakhalof4.setOnClickListener {
+            val intent = Intent(this, ActivitySabteTakhalof5::class.java)
+            startActivity(intent)
+        }
     }
 }
