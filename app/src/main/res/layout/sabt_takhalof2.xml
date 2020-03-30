@@ -56,6 +56,14 @@
                         android:layout_weight="2.7"
                         app:srcCompat="@drawable/alfablank1" />
 
+                    <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                        android:id="@+id/searchablespinner_add_takhalof"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="70dp"
+                        android:layout_marginRight="70dp"
+                        android:layout_weight="2.5"
+                        android:entries="@array/takhalof" />
 
                     <EditText
                         android:id="@+id/editText"

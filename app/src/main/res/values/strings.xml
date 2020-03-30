@@ -233,4 +233,13 @@
         <item>تالار کوروش</item>
     </string-array>
 
+    <string-array name="takhalof">
+        <item>انتخاب نوع تخلف</item>
+        <item>رابطه نامشروع</item>
+        <item>مصرف مشروبات الکلی</item>
+        <item>خرید و فروش مشروبات الکلی</item>
+        <item>پارتی مختلط</item>
+        <item>سایر</item>
+    </string-array>
+
 </resources>

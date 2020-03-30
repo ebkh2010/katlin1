@@ -28,5 +28,10 @@ class ActivitySabteTakhalof4 : AppCompatActivity() {
             val intent = Intent(this, ActivitySabteTakhalof5::class.java)
             startActivity(intent)
         }
+
+        btn_add_car.setOnClickListener {
+            val intent = Intent(this, ActivitySabteKhodro::class.java)
+            startActivity(intent)
+        }
     }
 }
