@@ -86,7 +86,8 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:ems="10"
-                                android:inputType="textPersonName" />
+                                android:inputType="textPersonName"
+                                android:maxLength="2" />
 
                             <EditText
                                 android:id="@+id/pelak2"
@@ -94,7 +95,8 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1.1"
                                 android:ems="10"
-                                android:inputType="textPersonName" />
+                                android:inputType="textPersonName"
+                                android:maxLength="1" />
 
                             <EditText
                                 android:id="@+id/pelak3"
@@ -102,7 +104,8 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:ems="10"
-                                android:inputType="textPersonName" />
+                                android:inputType="textPersonName"
+                                android:maxLength="3" />
 
                             <EditText
                                 android:id="@+id/pelak_iran"
@@ -110,7 +113,8 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1.1"
                                 android:ems="10"
-                                android:inputType="textPersonName" />
+                                android:inputType="textPersonName"
+                                android:maxLength="2" />
 
                         </LinearLayout>
 

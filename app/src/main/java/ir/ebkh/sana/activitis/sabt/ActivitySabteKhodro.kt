@@ -17,6 +17,8 @@ class ActivitySabteKhodro : AppCompatActivity() {
 
         if (Locale.getDefault().getDisplayLanguage()== "English")
             setContentView(R.layout.sabt_khodro)
+        else
+            setContentView(R.layout.sabt_khodro_fa)
 
 
 
