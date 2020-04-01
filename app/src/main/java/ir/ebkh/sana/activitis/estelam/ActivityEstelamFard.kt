@@ -8,6 +8,6 @@ class ActivityEstelamFard : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.estelamfard)
+        setContentView(R.layout.estelam_fard)
     }
 }
