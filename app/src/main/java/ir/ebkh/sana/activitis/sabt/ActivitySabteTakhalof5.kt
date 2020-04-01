@@ -2,6 +2,8 @@ package ir.ebkh.sana.activitis.sabt
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.MotionEvent
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import ir.ebkh.sana.R
 import ir.ebkh.sana.activitis.estelam.ActivityEstelam
@@ -22,7 +24,15 @@ class ActivitySabteTakhalof5 : AppCompatActivity() {
         searchablespinner_makantakhalof.setTitle("جستجو و انتخاب کنید")
         searchablespinner_makantakhalof.setPositiveButton("تایید")
 
-
+        btn_sabtetakhalof5.setOnTouchListener(View.OnTouchListener { v, event ->
+            if (event.action == MotionEvent.ACTION_DOWN) {
+                btn_sabtetakhalof5.setImageResource(R.drawable.pushedd_sabte_sana)
+            }
+            if (event.action == MotionEvent.ACTION_UP) {
+                btn_sabtetakhalof5.setImageResource(R.drawable.sabte_sana)
+            }
+            false
+        })
         btn_sabtetakhalof5.setOnClickListener {
             val intent = Intent(this, ActivityEstelam::class.java)
             startActivity(intent)

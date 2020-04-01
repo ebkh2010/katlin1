@@ -217,7 +217,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <ImageView
-                android:id="@+id/btn_takhalof"
+                android:id="@+id/btn_sabt_takhalof_next"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="15dp"

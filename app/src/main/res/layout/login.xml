@@ -58,7 +58,8 @@
                     android:layout_height="match_parent"
                     android:hint="User"
                     android:textColor="#333"
-                    android:textSize="15sp" />
+                    android:textSize="15sp"
+                    />
 
             </com.github.florent37.materialtextfield.MaterialTextField>
 
@@ -86,7 +87,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="Password"
-
+                    android:inputType="textPassword"
                     android:textColor="#3333"
                     android:textSize="15sp"
                     />
@@ -113,7 +114,7 @@
                 android:layout_weight="1.1" />
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/btn_exit"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"

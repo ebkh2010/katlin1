@@ -31,7 +31,7 @@ public class ActivitySplashScreen extends Activity
 
     private static long SPLASH_MILLIS = 4000;
 
-    ImageView back,book,agmented;
+    ImageView back,book;
 
     Animation fade,zoomout;
 
@@ -53,8 +53,8 @@ public class ActivitySplashScreen extends Activity
         fade = AnimationUtils.loadAnimation(this,R.anim.fade);
         zoomout = AnimationUtils.loadAnimation(this,R.anim.zoomout);
 
-        back = (ImageView) findViewById(R.id.splash_logo);
-        book = (ImageView) findViewById(R.id.splash_sana);
+        back =  findViewById(R.id.splash_logo);
+        book =  findViewById(R.id.splash_sana);
 
         book.setAnimation(fade);
         back.setAnimation(zoomout);
@@ -125,8 +125,3 @@ public class ActivitySplashScreen extends Activity
     }
 
 }
-
-// مشکل موجود در این صفحه این است که اگر دسترسی ها توسط کاربر رد شود صفحه بدون هیچ عکس العملی ثابت خواهد ماند در حالی که بهتر است
-// پیامی مبنی بر نیاز نرم افزار به دسترسی ها و یا توضیحی برای نیاز نرم افزار به دسترسی ها به کاربر نشان داده شود.
-
-//تابع کلید بک هم طراحی نشده است.
