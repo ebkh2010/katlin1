@@ -50,6 +50,10 @@
         </activity>
 
         <activity
+            android:name=".activitis.estelam.ActivityEstelamMotor">
+        </activity>
+
+        <activity
             android:name=".activitis.sabt.ActivitySabteFard">
         </activity>
 

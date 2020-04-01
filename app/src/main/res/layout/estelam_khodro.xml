@@ -193,7 +193,7 @@
                 app:srcCompat="@drawable/btn_estelam" />
 
             <ImageView
-                android:id="@+id/imageView5"
+                android:id="@+id/btn_estelam_motor"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="3.2"

@@ -4,8 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import ir.ebkh.sana.R
-import ir.ebkh.sana.main.G.*
-import kotlinx.android.synthetic.main.sabt_fard.*
+import kotlinx.android.synthetic.main.sabt_fard2.*
 
 class ActivitySabteFard : AppCompatActivity() {
 
@@ -14,7 +13,7 @@ class ActivitySabteFard : AppCompatActivity() {
         setContentView(R.layout.sabt_fard)
 
 
-        btn_sabtetakhalof3.setOnClickListener {
+        btn_sabtefard.setOnClickListener {
             val intent = Intent(this, ActivitySabteFard2::class.java)
             startActivity(intent)
         }
