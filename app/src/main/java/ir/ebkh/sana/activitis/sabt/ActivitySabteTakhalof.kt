@@ -28,5 +28,6 @@ class ActivitySabteTakhalof : AppCompatActivity() {
             val intent = Intent(this, ActivitySabteTakhalof2::class.java)
             startActivity(intent)
         }
+
     }
 }
