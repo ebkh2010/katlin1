@@ -15,7 +15,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
+import ir.ebkh.sana.main.G;
 
 import androidx.core.app.ActivityCompat;
 
@@ -24,15 +24,16 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import ir.ebkh.sana.R;
+import ir.ebkh.sana.main.MyDatabaseHelper;
+
+import static ir.ebkh.sana.main.G.database;
 
 
 public class ActivitySplashScreen extends Activity
 {
 
     private static long SPLASH_MILLIS = 4000;
-
     ImageView back,book;
-
     Animation fade,zoomout;
 
     @Override
@@ -59,9 +60,6 @@ public class ActivitySplashScreen extends Activity
         book.setAnimation(fade);
         back.setAnimation(zoomout);
 
-
-
-
         //TODO گرفتن دسترسی های مورد نیاز
         int PERMISSION_ALL = 1;
         final String[] PERMISSIONS = {
@@ -84,6 +82,7 @@ public class ActivitySplashScreen extends Activity
 
                     timer.cancel();
                     makeDirs();
+                    creatOrOpenDB();
                     Intent intent = new Intent(ActivitySplashScreen.this,
                             Activitylogin.class);
                     startActivity(intent);
@@ -113,15 +112,22 @@ public class ActivitySplashScreen extends Activity
 
     private void makeDirs(){
 
-//        new File(G.DIR_SDCARD).mkdir();
-//        new File(G.APP_SD_DIR).mkdir();
-//        new File(G.IMG_SD_DIR).mkdir();
-////        new File(G.AUDIO_SD_DIR).mkdir();
+        new File(G.DIR_SDCARD).mkdirs();
+        new File(G.APP_SD_DIR).mkdirs();
+        new File(G.DB_SD_DIR).mkdirs();
+//        new File(G.AUDIO_SD_DIR).mkdir();
 //        new File(G.VIDEO_SD_DIR).mkdir();
-////        new File(G.AUDIO_REC_SD_DIR).mkdir();
+//        new File(G.AUDIO_REC_SD_DIR).mkdir();
 //        new File(G.TEXTURE_DATA_SD_DIR).mkdir();
-////        new File(G.CASH_SD_DIR).mkdir();
+//        new File(G.CASH_SD_DIR).mkdir();
 //        new File(G.BOOK_SD_DIR).mkdir();
+    }
+
+    public void creatOrOpenDB(){
+
+        if (database!=null) return;
+        MyDatabaseHelper dbHelper = new MyDatabaseHelper(this);
+        database = dbHelper.getWritableDatabase();
     }
 
 }
