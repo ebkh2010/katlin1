@@ -36,6 +36,7 @@ class Activitylogin : AppCompatActivity() {
 //                {
                     val intent = Intent(this, ActivityEstelam::class.java)
                     startActivity(intent)
+                    finish()
 //                }
         }
 

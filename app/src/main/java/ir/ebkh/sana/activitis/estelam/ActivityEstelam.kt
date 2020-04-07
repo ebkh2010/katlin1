@@ -30,6 +30,7 @@ class ActivityEstelam : AppCompatActivity() {
         btn_estelam_fard.setOnClickListener {
             val intent = Intent(this, ActivityEstelamFard::class.java)
             startActivity(intent)
+            finish()
         }
 
         btn_estelam_makan.setOnTouchListener(OnTouchListener { v, event ->
@@ -58,6 +59,7 @@ class ActivityEstelam : AppCompatActivity() {
         btn_estelam_vasile.setOnClickListener {
             val intent = Intent(this, ActivityEstelamKhodro::class.java)
             startActivity(intent)
+            finish()
         }
 
         btn_estelam_takhalof.setOnTouchListener(OnTouchListener { v, event ->
@@ -86,6 +88,7 @@ class ActivityEstelam : AppCompatActivity() {
         new_sana.setOnClickListener {
             val intent = Intent(this, ActivitySabteTakhalof::class.java)
             startActivity(intent)
+            finish()
         }
 
     }
@@ -93,5 +96,6 @@ class ActivityEstelam : AppCompatActivity() {
     override fun onBackPressed() {
         val intent = Intent(this, ActivityEstelam::class.java)
         startActivity(intent)
+        finish()
     }
 }

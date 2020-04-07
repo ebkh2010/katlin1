@@ -32,6 +32,7 @@ class ActivityEstelamKhodro : AppCompatActivity() {
             btn_estelam_motor.setOnClickListener {
                 val intent = Intent(this, ActivityEstelamMotor::class.java)
                 startActivity(intent)
+                finish()
             }
         }
         else
@@ -49,10 +50,8 @@ class ActivityEstelamKhodro : AppCompatActivity() {
             btn_estelam_motor_fa.setOnClickListener {
                 val intent = Intent(this, ActivityEstelamMotor::class.java)
                 startActivity(intent)
+                finish()
             }
         }
-
-
-
     }
 }
