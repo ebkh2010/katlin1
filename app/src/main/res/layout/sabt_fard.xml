@@ -55,63 +55,51 @@
                         android:layout_weight="1.13"/>
 
                     <EditText
-                        android:id="@+id/estelam_fard_name"
+                        android:id="@+id/sabt_fard_name"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:ems="10"
-                        android:inputType="textPersonName"
-                        android:text="نام"
-                        android:layout_marginRight="70dp"
                         android:layout_marginLeft="70dp"
-                        />
-
-                    <EditText
-                        android:id="@+id/estelam_fard_famil"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_marginRight="70dp"
                         android:layout_weight="1"
                         android:ems="10"
-                        android:inputType="textPersonName"
-                        android:text="نام خانوادگی"
-                        android:layout_marginRight="70dp"
-                        android:layout_marginLeft="70dp"/>
+                        android:hint="نام"
+                        android:inputType="textPersonName" />
 
                     <EditText
-                        android:id="@+id/estelam_fard_kodmelli"
+                        android:id="@+id/sabt_fard_famil"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layout_marginLeft="70dp"
+                        android:layout_marginRight="70dp"
                         android:layout_weight="1"
                         android:ems="10"
-                        android:inputType="textPersonName"
-                        android:text="کد ملی"
-                        android:layout_marginRight="70dp"
-                        android:layout_marginLeft="70dp"/>
+                        android:hint="نام خانوادگی"
+                        android:inputType="textPersonName" />
 
                     <EditText
-                        android:id="@+id/estelam_fard_father_name"
+                        android:id="@+id/sabt_fard_kodmelli"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layout_marginLeft="70dp"
+                        android:layout_marginRight="70dp"
                         android:layout_weight="1"
                         android:ems="10"
-                        android:inputType="textPersonName"
-                        android:text="نام پدر"
-                        android:layout_marginRight="70dp"
-                        android:layout_marginLeft="70dp"/>
+                        android:hint="کد ملی"
+                        android:inputType="number" />
 
-<!--                    <EditText-->
-<!--                        android:id="@+id/estelam_fard_Gender"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="match_parent"-->
-<!--                        android:layout_weight="1"-->
-<!--                        android:ems="10"-->
-<!--                        android:inputType="textPersonName"-->
-<!--                        android:text="جنسیت"-->
-<!--                        android:layout_marginRight="70dp"-->
-<!--                        android:layout_marginLeft="70dp"/>-->
+                    <EditText
+                        android:id="@+id/sabt_fard_father_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="70dp"
+                        android:layout_marginRight="70dp"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="نام پدر"
+                        android:inputType="textPersonName" />
 
                     <Spinner
-                        android:id="@+id/spinner"
+                        android:id="@+id/spinner_sabt_gender"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="70dp"
@@ -140,7 +128,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <ImageView
-                android:id="@+id/btn_sabtetakhalof3"
+                android:id="@+id/btn_sabtefard"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="15dp"

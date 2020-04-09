@@ -22,6 +22,12 @@ class ActivitySabteTakhalof3 : AppCompatActivity() {
         searchablespinner.setTitle("جستجو و انتخاب کنید")
         searchablespinner.setPositiveButton("تایید")
 
+        btn_takhalof3_add_fard.setOnClickListener {
+            val intent = Intent(this, ActivitySabteFard::class.java)
+            startActivity(intent)
+            finish()
+        }
+
         btn_sabtetakhalof3.setOnTouchListener(View.OnTouchListener { v, event ->
             if (event.action == MotionEvent.ACTION_DOWN) {
                 btn_sabtetakhalof3.setImageResource(R.drawable.pushed_btn_next)
@@ -34,6 +40,7 @@ class ActivitySabteTakhalof3 : AppCompatActivity() {
         btn_sabtetakhalof3.setOnClickListener {
             val intent = Intent(this, ActivitySabteTakhalof4::class.java)
             startActivity(intent)
+            finish()
         }
     }
 }

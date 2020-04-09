@@ -65,7 +65,7 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:id="@+id/imageView"
+                            android:id="@+id/btn_takhalof3_add_fard"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="2.7"
