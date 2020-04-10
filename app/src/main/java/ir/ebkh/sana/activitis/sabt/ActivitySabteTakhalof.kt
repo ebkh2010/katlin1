@@ -8,11 +8,15 @@ import android.view.MotionEvent
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.michaldrabik.classicmaterialtimepicker.CmtpTimeDialogFragment
+import com.michaldrabik.classicmaterialtimepicker.utilities.setOnTime12PickedListener
 import ir.ebkh.sana.R
 import kotlinx.android.synthetic.main.sabt_takhalof.*
 import ir.hamsaa.persiandatepicker.Listener
 import ir.hamsaa.persiandatepicker.PersianDatePickerDialog
 import ir.hamsaa.persiandatepicker.util.PersianCalendar
+import com.michaldrabik.classicmaterialtimepicker.model.CmtpTime12.PmAm.PM
+
 
 
 class ActivitySabteTakhalof : AppCompatActivity() {
@@ -22,6 +26,8 @@ class ActivitySabteTakhalof : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.sabt_takhalof)
+
+        takhalof_hour.setOnClickListener { showTime12PickerDialog() }
 
         btn_sabt_takhalof_next.setOnTouchListener(View.OnTouchListener { v, event ->
             if (event.action == MotionEvent.ACTION_DOWN) {
@@ -69,6 +75,15 @@ class ActivitySabteTakhalof : AppCompatActivity() {
                 override fun onDismissed() {}
             })
         picker.show()
+    }
+
+    private fun showTime12PickerDialog() {
+        val dialog = CmtpTimeDialogFragment.newInstance()
+        dialog.setInitialTime12(5, 15, PM)
+        dialog.setOnTime12PickedListener {
+            Toast.makeText(this@ActivitySabteTakhalof, it.toString(), Toast.LENGTH_SHORT).show()
+        }
+        dialog.show(supportFragmentManager, "TimePicker")
     }
 
 }
