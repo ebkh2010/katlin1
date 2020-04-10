@@ -47,8 +47,8 @@ class ActivitySabteTakhalof : AppCompatActivity() {
         val initDate = PersianCalendar()
         initDate.setPersianDate(1370, 3, 13)
         var picker = PersianDatePickerDialog(this)
-            .setPositiveButtonString("باشه")
-            .setNegativeButton("بیخیال")
+            .setPositiveButtonString("تایید")
+            .setNegativeButton("انصراف")
             .setTodayButton("امروز")
             .setTodayButtonVisible(true)
             .setMinYear(1380)
@@ -63,7 +63,7 @@ class ActivitySabteTakhalof : AppCompatActivity() {
                     date = persianCalendar.getPersianYear()
                         .toString() + "/" + persianCalendar.getPersianMonth() + "/" + persianCalendar.getPersianDay()
 //                    Toast.makeText(this@ActivitySabteTakhalof,date, Toast.LENGTH_SHORT).show()
-                    sabt_tarikh_takhalof.setText(date)
+                    tarikh_takhalof.setText(date)
                 }
 
                 override fun onDismissed() {}

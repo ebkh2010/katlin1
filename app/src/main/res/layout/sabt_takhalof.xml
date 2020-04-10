@@ -64,23 +64,40 @@
                         android:layout_marginLeft="70dp"
                         android:layout_marginRight="70dp"
                         android:layout_weight="1.12"
-                        android:gravity="center_horizontal|center_vertical"
+                        android:gravity="center"
                         android:text="کد جدید ثانا"
                         android:textSize="20dp" />
 
                     <TextView
-                        android:id="@+id/sabt_tarikh_takhalof"
+                        android:id="@+id/textView34"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="70dp"
                         android:layout_marginRight="70dp"
                         android:layout_weight="1.2"
-                        android:gravity="center"
-                        android:text=" ثبت تاریخ تخلف"
-                        android:onClick="showCalendar"
-                        android:textSize="20dp"/>
+                        android:gravity="bottom"
+                        android:text="تاریخ تخلف" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="70dp"
+                        android:layout_marginRight="70dp"
+                        android:layout_weight="1.08"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/tarikh_takhalof"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:hint="تاریخ تخلف"
+                            android:onClick="showCalendar"
+                            android:inputType="textPersonName" />
 
 
+                    </LinearLayout>
 
                     <TextView
                         android:id="@+id/textView4"
@@ -99,6 +116,31 @@
                         android:layout_marginRight="70dp"
                         android:layout_weight="1.08"
                         android:orientation="horizontal">
+
+<!--                        <Spinner-->
+<!--                            android:id="@+id/takhalof_hour"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:entries="@array/hour"/>-->
+
+
+<!--                        <fr.ganfra.materialspinner.MaterialSpinner-->
+<!--                            android:id="@+id/spinner_minut"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:entries="@array/minut"-->
+<!--                            app:ms_multiline="false"-->
+<!--                            app:ms_hint="دقیقه"-->
+<!--                            app:ms_enableFloatingLabel="false"-->
+<!--                            app:ms_enableErrorLabel="false"-->
+<!--                            app:ms_floatingLabelText="floating label"-->
+<!--                            app:ms_isRtl="true"-->
+<!--                            android:textAlignment="center"-->
+<!--                            app:ms_thickness="2dp"-->
+<!--                            app:ms_arrowSize="10dp"-->
+<!--                            app:ms_alignLabels="true"/>-->
 
                         <EditText
                             android:id="@+id/takhalof_minut"
@@ -119,6 +161,12 @@
                             android:text=":"
                             android:textSize="30dp" />
 
+<!--                        <Spinner-->
+<!--                            android:id="@+id/takhalof_mminut"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:entries="@array/minut"/>-->
 
                         <EditText
                             android:id="@+id/takhalof_hour"
