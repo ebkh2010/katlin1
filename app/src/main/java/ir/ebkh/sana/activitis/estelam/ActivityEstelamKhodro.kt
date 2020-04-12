@@ -54,4 +54,12 @@ class ActivityEstelamKhodro : AppCompatActivity() {
             }
         }
     }
+
+    override fun onBackPressed() {
+
+        val intent = Intent(this, ActivityEstelam::class.java)
+        startActivity(intent)
+        finish()
+
+    }
 }

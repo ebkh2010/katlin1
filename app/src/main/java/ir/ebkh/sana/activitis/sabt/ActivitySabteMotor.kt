@@ -1,10 +1,12 @@
 package ir.ebkh.sana.activitis.sabt
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MotionEvent
 import android.view.View
 import ir.ebkh.sana.R
+import ir.ebkh.sana.activitis.estelam.ActivityEstelam
 import kotlinx.android.synthetic.main.estelam.*
 import kotlinx.android.synthetic.main.sabt_motor.*
 import kotlinx.android.synthetic.main.sabt_motor_fa.*
@@ -42,5 +44,13 @@ class ActivitySabteMotor : AppCompatActivity() {
             })
 
         }
+    }
+
+    override fun onBackPressed() {
+
+        val intent = Intent(this, ActivitySabteKhodro::class.java)
+        startActivity(intent)
+        finish()
+
     }
 }

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.MotionEvent
 import android.view.View
 import ir.ebkh.sana.R
+import ir.ebkh.sana.activitis.estelam.ActivityEstelam
 import kotlinx.android.synthetic.main.sabt_takhalof.*
 import kotlinx.android.synthetic.main.sabt_takhalof2.*
 import kotlinx.android.synthetic.main.sabt_takhalof3.*
@@ -33,6 +34,14 @@ class ActivitySabteTakhalof2 : AppCompatActivity() {
             val intent = Intent(this, ActivitySabteTakhalof3::class.java)
             startActivity(intent)
         }
+
+    }
+
+    override fun onBackPressed() {
+
+        val intent = Intent(this, ActivitySabteTakhalof::class.java)
+        startActivity(intent)
+        finish()
 
     }
 }

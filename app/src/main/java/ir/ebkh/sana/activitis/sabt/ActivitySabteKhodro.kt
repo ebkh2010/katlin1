@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import ir.ebkh.sana.R
+import ir.ebkh.sana.activitis.estelam.ActivityEstelam
 import kotlinx.android.synthetic.main.sabt_khodro.*
 import kotlinx.android.synthetic.main.sabt_takhalof.*
 import kotlinx.android.synthetic.main.sabt_takhalof2.*
@@ -21,7 +22,13 @@ class ActivitySabteKhodro : AppCompatActivity() {
             setContentView(R.layout.sabt_khodro_fa)
 
 
+    }
 
+    override fun onBackPressed() {
+
+        val intent = Intent(this, ActivitySabteTakhalof::class.java)
+        startActivity(intent)
+        finish()
 
     }
 }

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.view.get
 import ir.ebkh.sana.R
+import ir.ebkh.sana.activitis.estelam.ActivityEstelam
 import ir.ebkh.sana.main.G
 import kotlinx.android.synthetic.main.sabt_fard.*
 
@@ -29,6 +30,14 @@ class ActivitySabteFard : AppCompatActivity() {
             val intent = Intent(this, ActivitySabteFard2::class.java)
             startActivity(intent)
         }
+    }
+
+    override fun onBackPressed() {
+
+        val intent = Intent(this, ActivitySabteTakhalof::class.java)
+        startActivity(intent)
+        finish()
+
     }
 }
 

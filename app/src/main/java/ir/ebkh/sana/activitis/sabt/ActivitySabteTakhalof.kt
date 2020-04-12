@@ -16,7 +16,7 @@ import ir.hamsaa.persiandatepicker.Listener
 import ir.hamsaa.persiandatepicker.PersianDatePickerDialog
 import ir.hamsaa.persiandatepicker.util.PersianCalendar
 import com.michaldrabik.classicmaterialtimepicker.model.CmtpTime12.PmAm.PM
-
+import ir.ebkh.sana.activitis.estelam.ActivityEstelam
 
 
 class ActivitySabteTakhalof : AppCompatActivity() {
@@ -28,6 +28,7 @@ class ActivitySabteTakhalof : AppCompatActivity() {
         setContentView(R.layout.sabt_takhalof)
 
         takhalof_hour.setOnClickListener { showTime12PickerDialog() }
+
 
         btn_sabt_takhalof_next.setOnTouchListener(View.OnTouchListener { v, event ->
             if (event.action == MotionEvent.ACTION_DOWN) {
@@ -81,9 +82,18 @@ class ActivitySabteTakhalof : AppCompatActivity() {
         val dialog = CmtpTimeDialogFragment.newInstance()
         dialog.setInitialTime12(5, 15, PM)
         dialog.setOnTime12PickedListener {
-            Toast.makeText(this@ActivitySabteTakhalof, it.toString(), Toast.LENGTH_SHORT).show()
+//            Toast.makeText(this@ActivitySabteTakhalof, it.toString(), Toast.LENGTH_SHORT).show()
+            takhalof_hour.setText(it.toString())
         }
         dialog.show(supportFragmentManager, "TimePicker")
+    }
+
+    override fun onBackPressed() {
+
+        val intent = Intent(this, ActivityEstelam::class.java)
+        startActivity(intent)
+        finish()
+
     }
 
 }

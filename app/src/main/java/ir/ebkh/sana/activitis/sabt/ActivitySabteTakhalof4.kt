@@ -45,4 +45,12 @@ class ActivitySabteTakhalof4 : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
+    override fun onBackPressed() {
+
+        val intent = Intent(this, ActivitySabteTakhalof3::class.java)
+        startActivity(intent)
+        finish()
+
+    }
 }
