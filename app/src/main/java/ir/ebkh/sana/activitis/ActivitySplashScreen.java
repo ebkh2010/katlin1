@@ -115,12 +115,6 @@ public class ActivitySplashScreen extends Activity
         new File(G.DIR_SDCARD).mkdirs();
         new File(G.APP_SD_DIR).mkdirs();
         new File(G.DB_SD_DIR).mkdirs();
-//        new File(G.AUDIO_SD_DIR).mkdir();
-//        new File(G.VIDEO_SD_DIR).mkdir();
-//        new File(G.AUDIO_REC_SD_DIR).mkdir();
-//        new File(G.TEXTURE_DATA_SD_DIR).mkdir();
-//        new File(G.CASH_SD_DIR).mkdir();
-//        new File(G.BOOK_SD_DIR).mkdir();
     }
 
     public void creatOrOpenDB(){

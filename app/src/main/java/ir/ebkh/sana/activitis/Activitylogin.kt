@@ -29,7 +29,6 @@ class Activitylogin : AppCompatActivity() {
             }
             false
         })
-
         btn_login.setOnClickListener {
 //            if (etxt_user.getText().toString() == user)
 //                if (etxt_pass.getText().toString() == pass)
@@ -40,10 +39,6 @@ class Activitylogin : AppCompatActivity() {
 //                }
         }
 
-        btn_exit.setOnClickListener {
-            btn_exit.setImageResource(R.drawable.pushed_btn_exit)
-            finish()
-        }
     }
 
     override fun onBackPressed() {

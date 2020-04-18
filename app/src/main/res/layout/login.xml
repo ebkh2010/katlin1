@@ -34,92 +34,44 @@
             android:layout_weight="0.9"
             android:orientation="vertical">
 
-<!--            <TextView-->
-<!--                android:id="@+id/textView"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:layout_weight="1" />-->
 
-            <com.github.florent37.materialtextfield.MaterialTextField
-                android:id="@+id/txt_use"
+            <EditText
+                android:id="@+id/editText2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp"
-                android:layout_weight=".8"
-                app:mtf_image="@drawable/user"
-                app:mtf_labelColor="#666">
+                android:layout_weight="1.05"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="نام کاربری"
+                android:inputType="textPersonName"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"/>
 
-                <EditText
-                    android:id="@+id/etxt_user"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:hint="User"
-                    android:textColor="#333"
-                    android:textSize="15sp"
-                    />
-
-            </com.github.florent37.materialtextfield.MaterialTextField>
-
-
-<!--            <TextView-->
-<!--                android:id="@+id/textView2"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:layout_weight="1.1" />-->
-
-            <com.github.florent37.materialtextfield.MaterialTextField
-                android:id="@+id/txt_pass"
+            <EditText
+                android:id="@+id/editText3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp"
-                android:layout_weight=".8"
-                app:mtf_image="@drawable/pass"
-                app:mtf_labelColor="#666">
-
-                <EditText
-                    android:id="@+id/etxt_pass"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:hint="Password"
-                    android:inputType="textPassword"
-                    android:textColor="#3333"
-                    android:textSize="15sp"
-                    />
-
-            </com.github.florent37.materialtextfield.MaterialTextField>
+                android:layout_weight="1.05"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="گذرواژه"
+                android:inputType="textPassword"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"/>
 
             <TextView
                 android:id="@+id/textView21"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1.05" />
+                android:layout_weight="1.3" />
 
             <ImageView
                 android:id="@+id/btn_login"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/btn_login" />
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1.1" />
-
-            <ImageView
-                android:id="@+id/btn_exit"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/btn_exit" />
-
+                app:srcCompat="@drawable/btn_login"
+                android:layout_margin="15dp"/>
 
         </LinearLayout>
     </LinearLayout>
