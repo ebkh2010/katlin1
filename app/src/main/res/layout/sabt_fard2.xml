@@ -55,49 +55,55 @@
                         android:layout_weight="1.1"/>
 
                     <TextView
-                        android:id="@+id/textView4"
+                        android:id="@+id/date_born"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="1.12"
-                        android:text="تاریخ تولد"
+                        android:layout_marginLeft="70dp"
                         android:layout_marginRight="70dp"
-                        android:layout_marginLeft="70dp"/>
+                        android:layout_weight="1"
+                        android:onClick="showbornCalendar"
+                        android:gravity="center_vertical"
+                        android:text="ورود تاریخ تولد"
+                        android:textColor="#000000"
+                        android:textSize="18dp" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1.08"
-                        android:orientation="horizontal"
-                        android:layout_marginRight="70dp"
-                        android:layout_marginLeft="70dp">
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_weight="1.08"-->
+<!--                        android:orientation="horizontal"-->
+<!--                        android:layout_marginRight="70dp"-->
+<!--                        android:layout_marginLeft="70dp">-->
 
-                        <EditText
-                            android:id="@+id/year"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:ems="10"
-                            android:inputType="number"
-                            android:text="سال" />
 
-                        <EditText
-                            android:id="@+id/mounth"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:ems="10"
-                            android:inputType="number"
-                            android:text="ماه" />
 
-                        <EditText
-                            android:id="@+id/day"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:ems="10"
-                            android:inputType="number"
-                            android:text="روز" />
-                    </LinearLayout>
+<!--                        <EditText-->
+<!--                            android:id="@+id/year"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:ems="10"-->
+<!--                            android:inputType="number"-->
+<!--                            android:text="سال" />-->
+
+<!--                        <EditText-->
+<!--                            android:id="@+id/mounth"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:ems="10"-->
+<!--                            android:inputType="number"-->
+<!--                            android:text="ماه" />-->
+
+<!--                        <EditText-->
+<!--                            android:id="@+id/day"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:ems="10"-->
+<!--                            android:inputType="number"-->
+<!--                            android:text="روز" />-->
+<!--                    </LinearLayout>-->
 
                     <EditText
                         android:id="@+id/estelam_fard_famil"

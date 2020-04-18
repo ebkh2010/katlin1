@@ -12,6 +12,14 @@ import kotlinx.android.synthetic.main.sabt_fard.*
 class ActivitySabteFard : AppCompatActivity() {
 
 
+    var kode_meli=""
+    var name=""
+    var lastname=""
+    var fathername=""
+    var gender=""
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.sabt_fard)
@@ -19,16 +27,22 @@ class ActivitySabteFard : AppCompatActivity() {
 
         btn_sabtefard.setOnClickListener {
 
-            var sqlq="INSERT INTO persons(kode_meli,first_name,last_name) " +
-                    "VALUES ('"+sabt_fard_kodmelli.text+"','"+sabt_fard_name.text+"','"+sabt_fard_famil.text+"')";
-            try {
-                G.database.execSQL(sqlq)
-            }catch (e: NumberFormatException) {
-                println("kodmelli") }
+//            var sqlq="INSERT INTO persons(kode_meli,first_name,last_name) " +
+//                    "VALUES ('"+sabt_fard_kodmelli.text+"','"+sabt_fard_name.text+"','"+sabt_fard_famil.text+"')";
+//            try {
+//                G.database.execSQL(sqlq)
+//            }catch (e: NumberFormatException) {
+//                println("kodmelli") }
 
+            kode_meli= sabt_fard_kodmelli.text.toString()
+            name = sabt_fard_name.text.toString()
+            lastname = sabt_fard_famil.text.toString()
+            fathername = sabt_fard_father_name.text.toString()
+            gender = spinner_sabt_gender.toString()
 
             val intent = Intent(this, ActivitySabteFard2::class.java)
             startActivity(intent)
+            finish()
         }
     }
 
