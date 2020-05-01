@@ -65,125 +65,55 @@
                         android:layout_marginRight="70dp"
                         android:layout_weight="1.12"
                         android:gravity="center"
-                        android:text="کد جدید ثانا"
+                        android:text="کد ثانا: 22345"
                         android:textSize="20dp" />
 
-                    <TextView
-                        android:id="@+id/textView34"
+                    <ImageView
+                        android:id="@+id/btn_takhalof_date"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="70dp"
                         android:layout_marginRight="70dp"
                         android:layout_weight="1.2"
                         android:gravity="bottom"
-                        android:text="تاریخ تخلف" />
+                        android:src="@drawable/btn_takhalof_date" />
 
-                    <LinearLayout
+                    <TextView
+                        android:id="@+id/takhalof_date"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="70dp"
                         android:layout_marginRight="70dp"
-                        android:layout_weight="1.08"
-                        android:orientation="horizontal">
+                        android:layout_weight="1.2"
+                        android:gravity="center"
+                        android:text=""
+                        android:textSize="20dp" />
 
-                        <EditText
-                            android:id="@+id/tarikh_takhalof"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:ems="10"
-                            android:hint="تاریخ تخلف"
-                            android:onClick="showCalendar"
-                            android:inputType="textPersonName" />
-
-
-                    </LinearLayout>
-
-                    <TextView
-                        android:id="@+id/textView4"
+                    <ImageView
+                        android:id="@+id/btn_takhalof_time"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="70dp"
                         android:layout_marginRight="70dp"
                         android:layout_weight="1.2"
                         android:gravity="bottom"
-                        android:text="ساعت تخلف" />
-
-                    <LinearLayout
+                        android:src="@drawable/btn_takhalof_time"/>
+                    <TextView
+                        android:id="@+id/takhalof_time"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="70dp"
                         android:layout_marginRight="70dp"
-                        android:layout_weight="1.08"
-                        android:orientation="horizontal">
-
-<!--                        <Spinner-->
-<!--                            android:id="@+id/takhalof_hour"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="match_parent"-->
-<!--                            android:layout_weight="1"-->
-<!--                            android:entries="@array/hour"/>-->
-
-
-<!--                        <fr.ganfra.materialspinner.MaterialSpinner-->
-<!--                            android:id="@+id/spinner_minut"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:layout_weight="1"-->
-<!--                            android:entries="@array/minut"-->
-<!--                            app:ms_multiline="false"-->
-<!--                            app:ms_hint="دقیقه"-->
-<!--                            app:ms_enableFloatingLabel="false"-->
-<!--                            app:ms_enableErrorLabel="false"-->
-<!--                            app:ms_floatingLabelText="floating label"-->
-<!--                            app:ms_isRtl="true"-->
-<!--                            android:textAlignment="center"-->
-<!--                            app:ms_thickness="2dp"-->
-<!--                            app:ms_arrowSize="10dp"-->
-<!--                            app:ms_alignLabels="true"/>-->
-
-                        <EditText
-                            android:id="@+id/takhalof_minut"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:ems="10"
-                            android:hint="دقیقه"
-                            android:inputType="textPersonName" />
-
-                        <TextView
-                            android:id="@+id/sana_blank"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_weight="1.7"
-                            android:gravity="center_horizontal|bottom"
-                            android:text=":"
-                            android:textSize="30dp" />
-
-<!--                        <Spinner-->
-<!--                            android:id="@+id/takhalof_mminut"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="match_parent"-->
-<!--                            android:layout_weight="1"-->
-<!--                            android:entries="@array/minut"/>-->
-
-                        <EditText
-                            android:id="@+id/takhalof_hour"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:ems="10"
-                            android:hint="ساعت"
-                            android:inputType="textPersonName" />
-
-                    </LinearLayout>
+                        android:layout_weight="1.2"
+                        android:gravity="center"
+                        android:text=""
+                        android:textSize="20dp" />
 
                     <ImageView
                         android:id="@+id/imageView8"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="1.2"
+                        android:layout_weight="1.3"
                         app:srcCompat="@drawable/alfablank1" />
 
                 </LinearLayout>

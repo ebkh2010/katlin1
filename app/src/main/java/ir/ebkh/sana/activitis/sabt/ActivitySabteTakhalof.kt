@@ -27,8 +27,39 @@ class ActivitySabteTakhalof : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.sabt_takhalof)
 
-        takhalof_hour.setOnClickListener { showTime12PickerDialog() }
+        //TODO کد جدید ثاتا باید تولید شود
+        //کد ثاتا باید در سیستم یکتا باشد
+        // برای همین هر نرم افزار یا باید آنلاین کدهای ثاتا را دریافت کند و یا در اولین اتصال به سرور، تعدادی کد ثاتا را برای خو رزرو کند.
+        // رزرو کدهای ثاتا میتواند به معنی ایجاد یک کد ترکیبی ویژه باشد که مشخص کننده دستگاه ثبت کننده است و یا صرفا یک کد ساده رزرو شده باشد.
 
+        sana_new_cod.setTypeface(Typeface.createFromAsset(assets, "Shabnam-Light-FD.ttf"))
+        sana_new_cod.setText("کد جدید: ۱۲۳۴۵۶")
+
+        btn_takhalof_date.setOnTouchListener(View.OnTouchListener { v, event ->
+            if (event.action == MotionEvent.ACTION_DOWN) {
+                btn_takhalof_date.setImageResource(R.drawable.pushed_btn_takhalof_date)
+            }
+            if (event.action == MotionEvent.ACTION_UP) {
+                btn_takhalof_date.setImageResource(R.drawable.btn_takhalof_date)
+            }
+            false
+        })
+        btn_takhalof_date.setOnClickListener {
+            showCalendar()
+        }
+
+        btn_takhalof_time.setOnTouchListener(View.OnTouchListener { v, event ->
+            if (event.action == MotionEvent.ACTION_DOWN) {
+                btn_takhalof_time.setImageResource(R.drawable.pushed_btn_takhalof_time)
+            }
+            if (event.action == MotionEvent.ACTION_UP) {
+                btn_takhalof_time.setImageResource(R.drawable.btn_takhalof_time)
+            }
+            false
+        })
+        btn_takhalof_time.setOnClickListener {
+            showTime12PickerDialog()
+        }
 
         btn_sabt_takhalof_next.setOnTouchListener(View.OnTouchListener { v, event ->
             if (event.action == MotionEvent.ACTION_DOWN) {
@@ -49,7 +80,7 @@ class ActivitySabteTakhalof : AppCompatActivity() {
 
     }
 
-    fun showCalendar(v: View?) {
+    fun showCalendar() {
         val typeface = Typeface.createFromAsset(assets, "Shabnam-Light-FD.ttf")
         val initDate = PersianCalendar()
         initDate.setPersianDate(1370, 3, 13)
@@ -70,7 +101,8 @@ class ActivitySabteTakhalof : AppCompatActivity() {
                     date = persianCalendar.getPersianYear()
                         .toString() + "/" + persianCalendar.getPersianMonth() + "/" + persianCalendar.getPersianDay()
 //                    Toast.makeText(this@ActivitySabteTakhalof,date, Toast.LENGTH_SHORT).show()
-                    tarikh_takhalof.setText(date)
+                    takhalof_date.setTypeface(Typeface.createFromAsset(assets, "Shabnam-Light-FD.ttf"))
+                    takhalof_date.setText(date)
                 }
 
                 override fun onDismissed() {}
@@ -78,14 +110,17 @@ class ActivitySabteTakhalof : AppCompatActivity() {
         picker.show()
     }
 
-    private fun showTime12PickerDialog() {
+    private fun  showTime12PickerDialog()  {
         val dialog = CmtpTimeDialogFragment.newInstance()
-        dialog.setInitialTime12(5, 15, PM)
+
+        dialog.setInitialTime12(0, 0, PM)
         dialog.setOnTime12PickedListener {
 //            Toast.makeText(this@ActivitySabteTakhalof, it.toString(), Toast.LENGTH_SHORT).show()
-            takhalof_hour.setText(it.toString())
+            takhalof_time.setTypeface(Typeface.createFromAsset(assets, "Shabnam-Light-FD.ttf"))
+            takhalof_time.setText(it.toString())
         }
         dialog.show(supportFragmentManager, "TimePicker")
+
     }
 
     override fun onBackPressed() {
