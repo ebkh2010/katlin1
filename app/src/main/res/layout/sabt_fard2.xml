@@ -54,18 +54,19 @@
                         app:srcCompat="@drawable/alfablank1"
                         android:layout_weight="1.1"/>
 
-                    <TextView
-                        android:id="@+id/date_born"
+                    <ImageView
+                        android:id="@+id/btn_date_born"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="70dp"
                         android:layout_marginRight="70dp"
+                        android:layout_marginTop="10dp"
                         android:layout_weight="1"
                         android:onClick="showbornCalendar"
                         android:gravity="center_vertical"
-                        android:text="ورود تاریخ تولد"
+                        android:src="@drawable/borndate"
                         android:textColor="#000000"
-                        android:textSize="18dp" />
+                         />
 
 <!--                    <LinearLayout-->
 <!--                        android:layout_width="match_parent"-->
@@ -105,25 +106,26 @@
 <!--                            android:text="روز" />-->
 <!--                    </LinearLayout>-->
 
-                    <EditText
-                        android:id="@+id/estelam_fard_famil"
+                    <TextView
+                        android:id="@+id/txt_born_date"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:ems="10"
-                        android:inputType="textPersonName"
-                        android:text="مکان تولد"
+                        android:gravity="center"
+                        android:text=""
+                        android:textSize="20dp"
                         android:layout_marginRight="70dp"
                         android:layout_marginLeft="70dp"/>
 
                     <EditText
-                        android:id="@+id/estelam_fard_job"
+                        android:id="@+id/makan_tavalod"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:ems="10"
                         android:inputType="textPersonName"
-                        android:text="شغل"
+                        android:text="محل تولد"
                         android:layout_marginRight="70dp"
                         android:layout_marginLeft="70dp"/>
 
@@ -135,7 +137,8 @@
                         android:layout_marginLeft="70dp"
                         android:layout_marginRight="70dp"
                         android:layout_weight="1.03"
-                        android:entries="@array/marage_arrays"/>
+                        android:entries="@array/marage_arrays"
+                        />
 
                     <Spinner
                         android:id="@+id/school"

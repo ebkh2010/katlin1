@@ -21,6 +21,7 @@ class ActivitySabteTakhalof2 : AppCompatActivity() {
         searchablespinner_add_takhalof.setPositiveButton("تایید")
 
 
+
         btn_sabtetakhalof2.setOnTouchListener(View.OnTouchListener { v, event ->
             if (event.action == MotionEvent.ACTION_DOWN) {
                 btn_sabtetakhalof2.setImageResource(R.drawable.pushed_btn_next)
@@ -34,6 +35,7 @@ class ActivitySabteTakhalof2 : AppCompatActivity() {
             val intent = Intent(this, ActivitySabteTakhalof3::class.java)
             startActivity(intent)
         }
+
 
     }
 
