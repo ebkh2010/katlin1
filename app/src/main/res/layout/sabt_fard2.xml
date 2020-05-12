@@ -125,7 +125,7 @@
                         android:layout_weight="1"
                         android:ems="10"
                         android:inputType="textPersonName"
-                        android:text="محل تولد"
+                        android:hint="محل تولد"
                         android:layout_marginRight="70dp"
                         android:layout_marginLeft="70dp"/>
 

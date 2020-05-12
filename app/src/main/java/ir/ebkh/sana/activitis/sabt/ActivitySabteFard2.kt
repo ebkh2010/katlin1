@@ -10,9 +10,9 @@ import android.widget.AdapterView
 import android.widget.AdapterView.OnItemSelectedListener
 import android.widget.ArrayAdapter
 import android.widget.Spinner
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import ir.ebkh.sana.R
+import ir.ebkh.sana.main.G.*
 import ir.hamsaa.persiandatepicker.Listener
 import ir.hamsaa.persiandatepicker.PersianDatePickerDialog
 import ir.hamsaa.persiandatepicker.util.PersianCalendar
@@ -21,10 +21,7 @@ import kotlinx.android.synthetic.main.sabt_fard2.*
 
 class ActivitySabteFard2 : AppCompatActivity() {
 
-    var born_date=""
-    var born_city=""
-    var marage_stat=""
-    var school_stat=""
+
     var list_of_marage_spiner = arrayOf("وضعیت تاهل", "مجرد", "متاهل","جدا شده","فوت همسر","نامشخص")
     var list_of_school_spiner = arrayOf("تحصیلات", "بیسواد", "زیر دیپلم","دیپلم","کارشناسی","کارشناسی ارشد","دکتری تخصصی","نامشخص")
 
@@ -43,9 +40,9 @@ class ActivitySabteFard2 : AppCompatActivity() {
                 btn_date_born.setImageResource(R.drawable.borndate)
             }
             false
-        })//تابع کلیک روی این کلیپ پر لیاوت فعال شده است
+        })//تابع کلیک روی این کلید در لیاوت فعال شده است
 
-        born_city= makan_tavalod.text.toString()
+
 
         val sp1 = findViewById(R.id.marage) as Spinner
         val adapter1: ArrayAdapter<String> = ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, list_of_marage_spiner)
@@ -74,6 +71,13 @@ class ActivitySabteFard2 : AppCompatActivity() {
         }
 
 
+        btn_sabtefard2.setOnClickListener {
+
+            born_city= makan_tavalod.text.toString()
+
+            val intent = Intent(this, ActivitySabteFard3::class.java)
+            startActivity(intent)
+        }
     }
 
     fun showbornCalendar(v: View?) {
@@ -104,7 +108,6 @@ class ActivitySabteFard2 : AppCompatActivity() {
             })
         picker.show()
     }
-
 
     override fun onBackPressed() {
 

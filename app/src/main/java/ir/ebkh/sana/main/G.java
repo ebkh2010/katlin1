@@ -14,6 +14,18 @@ public class G extends Application {
                                                                         .getAbsolutePath(),
                                             APP_SD_DIR              = DIR_SDCARD + "/sana",
                                             DB_SD_DIR               = APP_SD_DIR + "/DB";
+    public static  String
+    kode_meli="",
+    name="",
+    lastname="",
+    fathername="",
+    gender="",
+     born_date="",
+     born_city="",
+     marage_stat="",
+     school_stat="",
+    job_stat="",
+    job_comment_stat="";
 
     public static Context context;
     public static LayoutInflater inflater;
