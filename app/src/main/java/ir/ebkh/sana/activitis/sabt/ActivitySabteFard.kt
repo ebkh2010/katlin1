@@ -3,6 +3,7 @@ package ir.ebkh.sana.activitis.sabt
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MotionEvent
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -13,6 +14,7 @@ import ir.ebkh.sana.activitis.estelam.ActivityEstelam
 import ir.ebkh.sana.main.G
 import ir.ebkh.sana.main.G.*
 import kotlinx.android.synthetic.main.sabt_fard.*
+import kotlinx.android.synthetic.main.sabt_takhalof.*
 
 class ActivitySabteFard : AppCompatActivity() {
 
@@ -40,6 +42,15 @@ class ActivitySabteFard : AppCompatActivity() {
         }
 
 
+        btn_sabtefard.setOnTouchListener(View.OnTouchListener { v, event ->
+            if (event.action == MotionEvent.ACTION_DOWN) {
+                btn_sabtefard.setImageResource(R.drawable.pushed_btn_next)
+            }
+            if (event.action == MotionEvent.ACTION_UP) {
+                btn_sabtefard.setImageResource(R.drawable.btn_next)
+            }
+            false
+        })
         btn_sabtefard.setOnClickListener {
 
 

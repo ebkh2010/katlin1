@@ -16,6 +16,7 @@ import ir.ebkh.sana.main.G.*
 import ir.hamsaa.persiandatepicker.Listener
 import ir.hamsaa.persiandatepicker.PersianDatePickerDialog
 import ir.hamsaa.persiandatepicker.util.PersianCalendar
+import kotlinx.android.synthetic.main.sabt_fard.*
 import kotlinx.android.synthetic.main.sabt_fard2.*
 
 
@@ -71,6 +72,15 @@ class ActivitySabteFard2 : AppCompatActivity() {
         }
 
 
+        btn_sabtefard2.setOnTouchListener(View.OnTouchListener { v, event ->
+            if (event.action == MotionEvent.ACTION_DOWN) {
+                btn_sabtefard2.setImageResource(R.drawable.pushed_btn_next)
+            }
+            if (event.action == MotionEvent.ACTION_UP) {
+                btn_sabtefard2.setImageResource(R.drawable.btn_next)
+            }
+            false
+        })
         btn_sabtefard2.setOnClickListener {
 
             born_city= makan_tavalod.text.toString()
