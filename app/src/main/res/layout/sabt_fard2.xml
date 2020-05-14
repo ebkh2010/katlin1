@@ -118,7 +118,7 @@
                         android:layout_marginRight="70dp"
                         android:layout_marginLeft="70dp"/>
 
-                    <EditText
+                    <com.toptoche.searchablespinnerlibrary.SearchableSpinner
                         android:id="@+id/makan_tavalod"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -130,7 +130,7 @@
                         android:layout_marginLeft="70dp"/>
 
 
-                    <Spinner
+                    <com.toptoche.searchablespinnerlibrary.SearchableSpinner
                         android:id="@+id/marage"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -140,7 +140,7 @@
                         android:entries="@array/marage_arrays"
                         />
 
-                    <Spinner
+                    <com.toptoche.searchablespinnerlibrary.SearchableSpinner
                         android:id="@+id/school"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"

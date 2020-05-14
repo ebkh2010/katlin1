@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import android.widget.Toast
 import androidx.core.view.get
 import ir.ebkh.sana.R
 import ir.ebkh.sana.activitis.estelam.ActivityEstelam
@@ -54,15 +55,23 @@ class ActivitySabteFard : AppCompatActivity() {
         btn_sabtefard.setOnClickListener {
 
 
+            //TODO پیش از ارسال باید چک شود که کد ملی در دیتا بیس داخل گوشی و دیتا بیش آنلاین وجود نداشته باشد(انجام نشده)
             kode_meli= sabt_fard_kodmelli.text.toString()
             name = sabt_fard_name.text.toString()
             lastname = sabt_fard_famil.text.toString()
             fathername = sabt_fard_father_name.text.toString()
 
 
-            val intent = Intent(this, ActivitySabteFard2::class.java)
-            startActivity(intent)
-            finish()
+            if (kode_meli!="" && name!="" && lastname!="" && fathername!="" && gender!="جنسیت")
+            {
+                val intent = Intent(this, ActivitySabteFard2::class.java)
+                startActivity(intent)
+                finish()
+            }
+            else
+            {
+                Toast.makeText(applicationContext,"داده ها ناقص است.", Toast.LENGTH_LONG).show()
+            }
         }
     }
 

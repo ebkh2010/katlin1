@@ -19,13 +19,16 @@ class ActivitySabteFard3 : AppCompatActivity() {
 
 
 
-    var list_of_job_spiner = arrayOf("بیکار", "دانشجو", "کارمند","شغل آزاد","فرهنگی","مهندس","پزشک","نظامی")
+    var list_of_job_spiner = arrayOf("شغل","بیکار", "دانشجو", "کارمند","شغل آزاد","فرهنگی","مهندس","پزشک","نظامی")
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.sabt_fard3)
 
+
+        searchablespinner_add_job.setTitle("جستجو و انتخاب کنید")
+        searchablespinner_add_job.setPositiveButton("تایید")
         val sp1 = findViewById(R.id.searchablespinner_add_job) as Spinner
         val adapter1: ArrayAdapter<String> = ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, list_of_job_spiner)
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -54,7 +57,6 @@ class ActivitySabteFard3 : AppCompatActivity() {
                     "father_name,tavalod_date,tavalod_city,tahsilat,taahol,job,job_comment) " +
                     "VALUES ('"+kode_meli+"','"+name+"','"+lastname+"','"+gender+"','"+ fathername+"','"+
                     born_date+"','"+ born_city+"','"+ school_stat+"','"+ marage_stat+"','"+ job_stat+"','"+ job_comment_stat+"')";
-
 
             try {
                 database.execSQL(sqlq)

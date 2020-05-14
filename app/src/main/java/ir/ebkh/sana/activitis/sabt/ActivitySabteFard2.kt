@@ -23,6 +23,7 @@ import kotlinx.android.synthetic.main.sabt_fard2.*
 class ActivitySabteFard2 : AppCompatActivity() {
 
 
+    var list_of_city_spiner = arrayOf("محل تولد", "قم", "تهران","اصفهان","شیراز","سایر")
     var list_of_marage_spiner = arrayOf("وضعیت تاهل", "مجرد", "متاهل","جدا شده","فوت همسر","نامشخص")
     var list_of_school_spiner = arrayOf("تحصیلات", "بیسواد", "زیر دیپلم","دیپلم","کارشناسی","کارشناسی ارشد","دکتری تخصصی","نامشخص")
 
@@ -44,7 +45,23 @@ class ActivitySabteFard2 : AppCompatActivity() {
         })//تابع کلیک روی این کلید در لیاوت فعال شده است
 
 
+        makan_tavalod.setTitle("جستجو و انتخاب کنید")
+        makan_tavalod.setPositiveButton("تایید")
+        val sp = findViewById(R.id.makan_tavalod) as Spinner
+        val adapter: ArrayAdapter<String> = ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, list_of_city_spiner)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        sp.setAdapter(adapter)
+        sp.onItemSelectedListener = object : OnItemSelectedListener {
+            override fun onItemSelected(arg0: AdapterView<*>?, arg1: View, position: Int, id: Long) {
+                born_city = list_of_city_spiner.get(position)
+            }
+            override fun onNothingSelected(arg0: AdapterView<*>?) {
+            }
+        }
 
+
+        marage.setTitle("جستجو و انتخاب کنید")
+        marage.setPositiveButton("تایید")
         val sp1 = findViewById(R.id.marage) as Spinner
         val adapter1: ArrayAdapter<String> = ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, list_of_marage_spiner)
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -58,6 +75,8 @@ class ActivitySabteFard2 : AppCompatActivity() {
         }
 
 
+        school.setTitle("جستجو و انتخاب کنید")
+        school.setPositiveButton("تایید")
         val sp2 = findViewById(R.id.school) as Spinner
         val adapter2: ArrayAdapter<String> = ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, list_of_school_spiner)
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -82,8 +101,6 @@ class ActivitySabteFard2 : AppCompatActivity() {
             false
         })
         btn_sabtefard2.setOnClickListener {
-
-            born_city= makan_tavalod.text.toString()
 
             val intent = Intent(this, ActivitySabteFard3::class.java)
             startActivity(intent)
