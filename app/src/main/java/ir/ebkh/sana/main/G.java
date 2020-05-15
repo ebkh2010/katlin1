@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 
 public class G extends Application {
 
-
     public static SQLiteDatabase database;
     public static final String              DIR_SDCARD 				= Environment.getExternalStorageDirectory()
                                                                         .getAbsolutePath(),
@@ -29,6 +28,10 @@ public class G extends Application {
                                             mobile="",
                                             phone="",
                                             other_numbers="";
+    public static int                       takhalof_number_of_persons=0,
+                                            takhalof_number_of_cars=0,
+                                            takhalof_number_of_motors=0;
+
 
     public static Context context;
     public static LayoutInflater inflater;
@@ -39,6 +42,8 @@ public class G extends Application {
         inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
     }
+
+
 
 
 

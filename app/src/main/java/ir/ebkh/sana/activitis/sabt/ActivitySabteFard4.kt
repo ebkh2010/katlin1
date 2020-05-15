@@ -128,6 +128,7 @@ class ActivitySabteFard4 : AppCompatActivity() {
 
             val intent = Intent(this, ActivitySabteFard::class.java)
             startActivity(intent)
+            finish()
         }
 
     }

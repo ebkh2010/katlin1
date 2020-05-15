@@ -80,7 +80,7 @@
                     </LinearLayout>
 
                     <ImageView
-                        android:id="@+id/btn_sabt_motekhalef"
+                        android:id="@+id/btn_sabt_motekhalef_add_persons"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="2.75"

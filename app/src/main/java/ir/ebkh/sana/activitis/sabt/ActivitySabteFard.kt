@@ -102,7 +102,7 @@ class ActivitySabteFard : AppCompatActivity() {
 
     override fun onBackPressed() {
 
-        val intent = Intent(this, ActivitySabteTakhalof::class.java)
+        val intent = Intent(this, ActivitySabteTakhalof3::class.java)
         startActivity(intent)
         finish()
 

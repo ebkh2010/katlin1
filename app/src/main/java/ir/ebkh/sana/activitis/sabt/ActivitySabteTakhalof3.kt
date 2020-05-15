@@ -2,15 +2,19 @@ package ir.ebkh.sana.activitis.sabt
 
 import android.content.Intent
 import android.database.Cursor
+import android.graphics.Typeface
 import android.os.Bundle
 import android.view.MotionEvent
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import ir.ebkh.sana.R
 import ir.ebkh.sana.main.G
+
+import kotlinx.android.synthetic.main.sabt_fard.*
 import kotlinx.android.synthetic.main.sabt_takhalof3.*
 
 
@@ -19,11 +23,13 @@ class ActivitySabteTakhalof3 : AppCompatActivity() {
 
     var fard_selected=""
     var list_of_persons_spiner: MutableList<String> = mutableListOf()
+    var list_of_persons_meliCode: MutableList<String> = mutableListOf()
+    var list_of_selected_meliCode: MutableList<String> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.sabt_takhalof3)
-
+        persons_count_txt.setTypeface(Typeface.createFromAsset(assets, "Shabnam-Light-FD.ttf"))
 
         //TODO تهیه لیست افراد از دیتا بیس
         list_of_persons_spiner.add("فرد متخلف")
@@ -45,7 +51,7 @@ class ActivitySabteTakhalof3 : AppCompatActivity() {
                         dbData1.getString(dbData1.getColumnIndex("last_name")) + " (" +
                         dbData1.getString(dbData1.getColumnIndex("kode_meli")) + ")"
 
-
+                list_of_persons_meliCode.add(dbData1.getString(dbData1.getColumnIndex("kode_meli")))
                 list_of_persons_spiner.add(listName)
 
             }while (dbData1.moveToNext())
@@ -64,16 +70,58 @@ class ActivitySabteTakhalof3 : AppCompatActivity() {
         sp4.setAdapter(adapter4)
         sp4.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(arg0: AdapterView<*>?, arg1: View, position: Int, id: Long) {
-                fard_selected = list_of_persons_spiner.get(position)
+                if (position>0)
+                    fard_selected = list_of_persons_meliCode.get(position-1)
             }
             override fun onNothingSelected(arg0: AdapterView<*>?) {
             }
         }
 
+        btn_takhalof3_add_fard.setOnTouchListener(View.OnTouchListener { v, event ->
+            if (event.action == MotionEvent.ACTION_DOWN) {
+                btn_takhalof3_add_fard.setImageResource(R.drawable.pushed_btn_plus)
+            }
+            if (event.action == MotionEvent.ACTION_UP) {
+                btn_takhalof3_add_fard.setImageResource(R.drawable.btn_plus)
+            }
+            false
+        })
         btn_takhalof3_add_fard.setOnClickListener {
             val intent = Intent(this, ActivitySabteFard::class.java)
             startActivity(intent)
-            finish()
+
+        }
+
+        btn_sabt_motekhalef_add_persons.setOnTouchListener(View.OnTouchListener { v, event ->
+            if (event.action == MotionEvent.ACTION_DOWN) {
+                btn_sabt_motekhalef_add_persons.setImageResource(R.drawable.pushed_btn_add_motekhalef)
+            }
+            if (event.action == MotionEvent.ACTION_UP) {
+                btn_sabt_motekhalef_add_persons.setImageResource(R.drawable.btn_add_motekhalef)
+            }
+            false
+        })
+        btn_sabt_motekhalef_add_persons.setOnClickListener {
+            if (fard_selected!="" && !isExistInList(list_of_selected_meliCode,fard_selected))
+            {
+                list_of_selected_meliCode.add(fard_selected)
+                persons_count_txt.setText(list_of_selected_meliCode.size.toString() + " نفر")
+            }
+            else
+            {
+                if (fard_selected == "")
+                    Toast.makeText(
+                        applicationContext,
+                        "کسی انتخاب نشده است.",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                if (isExistInList(list_of_selected_meliCode,fard_selected))
+                    Toast.makeText(
+                        applicationContext,
+                        "فرد انتخاب شده تکراری است.",
+                        Toast.LENGTH_SHORT
+                    ).show()
+            }
         }
 
         btn_sabtetakhalof3.setOnTouchListener(View.OnTouchListener { v, event ->
@@ -88,7 +136,6 @@ class ActivitySabteTakhalof3 : AppCompatActivity() {
         btn_sabtetakhalof3.setOnClickListener {
             val intent = Intent(this, ActivitySabteTakhalof4::class.java)
             startActivity(intent)
-            finish()
         }
     }
 
@@ -100,5 +147,17 @@ class ActivitySabteTakhalof3 : AppCompatActivity() {
         startActivity(intent)
         finish()
 
+    }
+    
+
+    fun isExistInList(list: MutableList<String>, item: String): Boolean {
+
+        var isEIL=false
+        if (list.size>0)
+            for (i in 0..list.size-1)
+            {
+                if (list[i]==item) isEIL=true
+            }
+        return isEIL
     }
 }
