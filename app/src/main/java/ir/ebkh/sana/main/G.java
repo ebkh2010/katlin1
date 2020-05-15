@@ -6,6 +6,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Environment;
 import android.view.LayoutInflater;
 
+import java.util.ArrayList;
+
 public class G extends Application {
 
     public static SQLiteDatabase database;
@@ -28,6 +30,7 @@ public class G extends Application {
                                             mobile="",
                                             phone="",
                                             other_numbers="";
+    public static ArrayList<String>         list= new ArrayList<String>();
     public static int                       takhalof_number_of_persons=0,
                                             takhalof_number_of_cars=0,
                                             takhalof_number_of_motors=0;

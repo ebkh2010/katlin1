@@ -13,6 +13,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import ir.ebkh.sana.R
 import ir.ebkh.sana.main.G
+import ir.ebkh.sana.main.G.*
 
 import kotlinx.android.synthetic.main.sabt_fard.*
 import kotlinx.android.synthetic.main.sabt_takhalof3.*
@@ -24,13 +25,15 @@ class ActivitySabteTakhalof3 : AppCompatActivity() {
     var fard_selected=""
     var list_of_persons_spiner: MutableList<String> = mutableListOf()
     var list_of_persons_meliCode: MutableList<String> = mutableListOf()
-    var list_of_selected_meliCode: MutableList<String> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.sabt_takhalof3)
         persons_count_txt.setTypeface(Typeface.createFromAsset(assets, "Shabnam-Light-FD.ttf"))
 
+
+
+        persons_count_txt.setText(list.size.toString() + " نفر")
         //TODO تهیه لیست افراد از دیتا بیس
         list_of_persons_spiner.add("فرد متخلف")
 
@@ -102,26 +105,27 @@ class ActivitySabteTakhalof3 : AppCompatActivity() {
             false
         })
         btn_sabt_motekhalef_add_persons.setOnClickListener {
-            if (fard_selected!="" && !isExistInList(list_of_selected_meliCode,fard_selected))
-            {
-                list_of_selected_meliCode.add(fard_selected)
-                persons_count_txt.setText(list_of_selected_meliCode.size.toString() + " نفر")
-            }
-            else
-            {
-                if (fard_selected == "")
-                    Toast.makeText(
-                        applicationContext,
-                        "کسی انتخاب نشده است.",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                if (isExistInList(list_of_selected_meliCode,fard_selected))
-                    Toast.makeText(
-                        applicationContext,
-                        "فرد انتخاب شده تکراری است.",
-                        Toast.LENGTH_SHORT
-                    ).show()
-            }
+
+                if (fard_selected != "" && !isExistInList(list, fard_selected)) {
+                    list.add(fard_selected)
+
+                    persons_count_txt.setText(list.size.toString() + " نفر")
+                } else {
+                    if (fard_selected == "")
+                        Toast.makeText(
+                            applicationContext,
+                            "کسی انتخاب نشده است.",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    if (isExistInList(list, fard_selected))
+                        Toast.makeText(
+                            applicationContext,
+                            "فرد انتخاب شده تکراری است.",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                }
+
+
         }
 
         btn_sabtetakhalof3.setOnTouchListener(View.OnTouchListener { v, event ->
@@ -148,12 +152,12 @@ class ActivitySabteTakhalof3 : AppCompatActivity() {
         finish()
 
     }
-    
+
 
     fun isExistInList(list: MutableList<String>, item: String): Boolean {
 
         var isEIL=false
-        if (list.size>0)
+        if ( list.size>0)
             for (i in 0..list.size-1)
             {
                 if (list[i]==item) isEIL=true
