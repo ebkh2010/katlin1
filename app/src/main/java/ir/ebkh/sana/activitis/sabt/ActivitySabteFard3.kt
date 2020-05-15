@@ -19,7 +19,7 @@ class ActivitySabteFard3 : AppCompatActivity() {
 
 
 
-    var list_of_job_spiner = arrayOf("شغل","بیکار", "دانشجو", "کارمند","شغل آزاد","فرهنگی","مهندس","پزشک","نظامی")
+    var list_of_job_spiner = arrayOf("شغل","بیکار", "دانشجو", "کارمند","شغل آزاد","فرهنگی","مهندس","پزشک","نظامی","خانه دار")
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,57 +41,50 @@ class ActivitySabteFard3 : AppCompatActivity() {
             }
         }
 
-        btn_back_sabtefard3.setOnTouchListener(View.OnTouchListener { v, event ->
+
+//        btn_sabtefard3.setOnClickListener {
+//            job_comment_stat = job_comment.text.toString()
+//
+//            var sqlq="INSERT INTO persons(kode_meli,first_name,last_name,gender," +
+//                    "father_name,tavalod_date,tavalod_city,tahsilat,taahol,job,job_comment) " +
+//                    "VALUES ('"+kode_meli+"','"+name+"','"+lastname+"','"+gender+"','"+ fathername+"','"+
+//                    born_date+"','"+ born_city+"','"+ school_stat+"','"+ marage_stat+"','"+ job_stat+"','"+ job_comment_stat+"')";
+//
+//            try {
+//                database.execSQL(sqlq)
+//            }catch (e: NumberFormatException) {
+//                println("kodmelli") }
+//
+//            val intent = Intent(this, ActivitySabteTakhalof3::class.java)
+//            startActivity(intent)
+//        }
+
+        btn_sabtefard3.setOnTouchListener(View.OnTouchListener { v, event ->
             if (event.action == MotionEvent.ACTION_DOWN) {
-                btn_back_sabtefard3.setImageResource(R.drawable.pushed_save_and_back)
+                btn_sabtefard3.setImageResource(R.drawable.pushed_btn_next)
             }
             if (event.action == MotionEvent.ACTION_UP) {
-                btn_back_sabtefard3.setImageResource(R.drawable.save_and_back)
+                btn_sabtefard3.setImageResource(R.drawable.btn_next)
             }
             false
         })
-        btn_back_sabtefard3.setOnClickListener {
+        btn_sabtefard3.setOnClickListener {
             job_comment_stat = job_comment.text.toString()
 
-            var sqlq="INSERT INTO persons(kode_meli,first_name,last_name,gender," +
-                    "father_name,tavalod_date,tavalod_city,tahsilat,taahol,job,job_comment) " +
-                    "VALUES ('"+kode_meli+"','"+name+"','"+lastname+"','"+gender+"','"+ fathername+"','"+
-                    born_date+"','"+ born_city+"','"+ school_stat+"','"+ marage_stat+"','"+ job_stat+"','"+ job_comment_stat+"')";
+//            var sqlq="INSERT INTO persons(kode_meli,first_name,last_name,gender," +
+//                    "father_name,tavalod_date,tavalod_city,tahsilat,taahol,job,job_comment) " +
+//                    "VALUES ('"+kode_meli+"','"+name+"','"+lastname+"','"+gender+"','"+ fathername+"','"+
+//                    born_date+"','"+ born_city+"','"+ school_stat+"','"+ marage_stat+"','"+ job_stat+"','"+ job_comment_stat+"')";
+//
+//
+//            try {
+//                database.execSQL(sqlq)
+//            }catch (e: NumberFormatException) {
+//                println("kodmelli") }
 
-            try {
-                database.execSQL(sqlq)
-            }catch (e: NumberFormatException) {
-                println("kodmelli") }
-
-            val intent = Intent(this, ActivitySabteTakhalof3::class.java)
+            val intent = Intent(this, ActivitySabteFard4::class.java)
             startActivity(intent)
-        }
-
-        btn_new_sabtefard3.setOnTouchListener(View.OnTouchListener { v, event ->
-            if (event.action == MotionEvent.ACTION_DOWN) {
-                btn_new_sabtefard3.setImageResource(R.drawable.pushed_save_and_new_person)
-            }
-            if (event.action == MotionEvent.ACTION_UP) {
-                btn_new_sabtefard3.setImageResource(R.drawable.save_and_new_person)
-            }
-            false
-        })
-        btn_new_sabtefard3.setOnClickListener {
-            job_comment_stat = job_comment.text.toString()
-
-            var sqlq="INSERT INTO persons(kode_meli,first_name,last_name,gender," +
-                    "father_name,tavalod_date,tavalod_city,tahsilat,taahol,job,job_comment) " +
-                    "VALUES ('"+kode_meli+"','"+name+"','"+lastname+"','"+gender+"','"+ fathername+"','"+
-                    born_date+"','"+ born_city+"','"+ school_stat+"','"+ marage_stat+"','"+ job_stat+"','"+ job_comment_stat+"')";
-
-
-            try {
-                database.execSQL(sqlq)
-            }catch (e: NumberFormatException) {
-                println("kodmelli") }
-
-            val intent = Intent(this, ActivitySabteFard::class.java)
-            startActivity(intent)
+            finish()
         }
 
     }

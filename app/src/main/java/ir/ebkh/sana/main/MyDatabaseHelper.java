@@ -58,7 +58,11 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
                 "tahsilat TEXT," +
                 "taahol TEXT," +
                 "job TEXT," +
-                "job_comment TEXT)");
+                "job_comment TEXT," +
+                "modile_number TEXT," +
+                "phone_number TEXT,"+
+                "other_phone_numbers TEXT" +
+                ")");
         db.execSQL( "CREATE TABLE place" +
                 "(" +
                 "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE," +

@@ -66,6 +66,10 @@
         </activity>
 
         <activity
+            android:name=".activitis.sabt.ActivitySabteFard4">
+        </activity>
+
+        <activity
             android:name=".activitis.sabt.ActivitySabteTakhalof">
         </activity>
 

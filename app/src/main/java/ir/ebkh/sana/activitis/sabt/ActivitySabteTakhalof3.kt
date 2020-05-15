@@ -28,7 +28,7 @@ class ActivitySabteTakhalof3 : AppCompatActivity() {
         //TODO تهیه لیست افراد از دیتا بیس
         list_of_persons_spiner.add("فرد متخلف")
 
-        val dbData: Cursor = G.database.query(
+        val dbData1: Cursor = G.database.query(
             "persons",
             arrayOf("first_name", "last_name","kode_meli"),
             null,
@@ -38,19 +38,20 @@ class ActivitySabteTakhalof3 : AppCompatActivity() {
             null,
             null
         )
-        if (dbData.moveToFirst())
+        if (dbData1.moveToFirst())
         {
             do {
-                var listName = dbData.getString(dbData.getColumnIndex("first_name")) + " " +
-                        dbData.getString(dbData.getColumnIndex("last_name")) + " (" +
-                        dbData.getString(dbData.getColumnIndex("kode_meli")) + ")"
+                var listName = dbData1.getString(dbData1.getColumnIndex("first_name")) + " " +
+                        dbData1.getString(dbData1.getColumnIndex("last_name")) + " (" +
+                        dbData1.getString(dbData1.getColumnIndex("kode_meli")) + ")"
 
 
                 list_of_persons_spiner.add(listName)
 
-            }while (dbData.moveToNext())
-            dbData.close()
+            }while (dbData1.moveToNext())
+            dbData1.close()
         }
+        dbData1.close()
 
 
         //تنظیمات اسپینر انتخاب فرد متخلف
