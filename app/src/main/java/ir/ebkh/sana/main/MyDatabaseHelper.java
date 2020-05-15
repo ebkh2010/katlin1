@@ -93,4 +93,8 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 //        db.execSQL("YOUR UPGRAGE QUERY 2");
 
     }
+
+    public void test(){
+
+    }
 }
