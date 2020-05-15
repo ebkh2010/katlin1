@@ -52,7 +52,7 @@ class ActivitySabteTakhalof3 : AppCompatActivity() {
             dbData.close()
         }
 
-        
+
         //تنظیمات اسپینر انتخاب فرد متخلف
         list_persons_sppiner.setTitle("جستجو و انتخاب کنید")
         list_persons_sppiner.setPositiveButton("تایید")

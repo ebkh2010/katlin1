@@ -1,8 +1,7 @@
 package ir.ebkh.sana.activitis.sabt
 
 import android.content.Intent
-import android.graphics.Typeface
-import androidx.appcompat.app.AppCompatActivity
+import android.database.Cursor
 import android.os.Bundle
 import android.view.MotionEvent
 import android.view.View
@@ -10,13 +9,11 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
-import androidx.core.view.get
+import androidx.appcompat.app.AppCompatActivity
 import ir.ebkh.sana.R
-import ir.ebkh.sana.activitis.estelam.ActivityEstelam
 import ir.ebkh.sana.main.G
 import ir.ebkh.sana.main.G.*
 import kotlinx.android.synthetic.main.sabt_fard.*
-import kotlinx.android.synthetic.main.sabt_takhalof.*
 
 class ActivitySabteFard : AppCompatActivity() {
 
@@ -55,25 +52,52 @@ class ActivitySabteFard : AppCompatActivity() {
         })
         btn_sabtefard.setOnClickListener {
 
-
-            //TODO پیش از ارسال باید چک شود که کد ملی در دیتا بیس داخل گوشی و دیتا بیش آنلاین وجود نداشته باشد(انجام نشده)
+            
             kode_meli= sabt_fard_kodmelli.text.toString()
             name = sabt_fard_name.text.toString()
             lastname = sabt_fard_famil.text.toString()
             fathername = sabt_fard_father_name.text.toString()
 
-
-            if (kode_meli!="" && name!="" && lastname!="" && fathername!="" && gender!="جنسیت")
+            if (kode_meli!="" && name!="" && lastname!="" && fathername!="" && gender!="جنسیت"
+                && !existMelliCode(kode_meli))
             {
                 val intent = Intent(this, ActivitySabteFard2::class.java)
                 startActivity(intent)
                 finish()
             }
-            else
+            else if (existMelliCode(kode_meli))
+            {
+                Toast.makeText(applicationContext,"کد ملی تکراری است.", Toast.LENGTH_LONG).show()
+            }
+            else if (kode_meli=="" || name=="" || lastname=="" || fathername=="" || gender=="جنسیت")
             {
                 Toast.makeText(applicationContext,"داده ها ناقص است.", Toast.LENGTH_LONG).show()
             }
         }
+    }
+
+    fun existMelliCode(cod: String): Boolean {
+        var ret=false
+
+        val dbData: Cursor = database.query(
+            "persons",
+            arrayOf("kode_meli"),
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+        )
+        if (dbData.moveToFirst())
+        {
+            do {
+               if (cod==dbData.getString(dbData.getColumnIndex("kode_meli")))
+                   ret= true
+            }while (dbData.moveToNext())
+            dbData.close()
+        }
+        return ret
     }
 
     override fun onBackPressed() {
