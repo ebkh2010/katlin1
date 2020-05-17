@@ -30,14 +30,15 @@ public class G extends Application {
                                             mobile="",
                                             phone="",
                                             other_numbers="";
-    public static ArrayList<String>         list= new ArrayList<String>();
-    public static int                       takhalof_number_of_persons=0,
-                                            takhalof_number_of_cars=0,
-                                            takhalof_number_of_motors=0;
+    public static ArrayList<String>         listOfSelectedMeliCods = new ArrayList<String>(),
+                                            listOfPesons = new ArrayList<String>();
+    public static ArrayList<Person>         listOfSelectedPersons = new ArrayList<Person>();
 
 
     public static Context context;
     public static LayoutInflater inflater;
+
+    public Person p=new Person();
 
     public void onCreate() {
         super.onCreate();

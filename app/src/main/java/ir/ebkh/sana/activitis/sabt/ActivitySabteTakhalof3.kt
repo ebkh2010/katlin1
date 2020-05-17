@@ -15,7 +15,6 @@ import ir.ebkh.sana.R
 import ir.ebkh.sana.main.G
 import ir.ebkh.sana.main.G.*
 
-import kotlinx.android.synthetic.main.sabt_fard.*
 import kotlinx.android.synthetic.main.sabt_takhalof3.*
 
 
@@ -23,7 +22,7 @@ class ActivitySabteTakhalof3 : AppCompatActivity() {
 
 
     var fard_selected=""
-    var list_of_persons_spiner: MutableList<String> = mutableListOf()
+
     var list_of_persons_meliCode: MutableList<String> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,11 +32,11 @@ class ActivitySabteTakhalof3 : AppCompatActivity() {
 
 
 
-        persons_count_txt.setText(list.size.toString() + " نفر")
+        persons_count_txt.setText(listOfSelectedMeliCods.size.toString() + " نفر")
         //TODO تهیه لیست افراد از دیتا بیس
-        list_of_persons_spiner.add("فرد متخلف")
+        listOfPesons.add("فرد متخلف")
 
-        val dbData1: Cursor = G.database.query(
+        val dbData1: Cursor = database.query(
             "persons",
             arrayOf("first_name", "last_name","kode_meli"),
             null,
@@ -55,7 +54,7 @@ class ActivitySabteTakhalof3 : AppCompatActivity() {
                         dbData1.getString(dbData1.getColumnIndex("kode_meli")) + ")"
 
                 list_of_persons_meliCode.add(dbData1.getString(dbData1.getColumnIndex("kode_meli")))
-                list_of_persons_spiner.add(listName)
+                listOfPesons.add(listName)
 
             }while (dbData1.moveToNext())
             dbData1.close()
@@ -68,7 +67,7 @@ class ActivitySabteTakhalof3 : AppCompatActivity() {
         list_persons_sppiner.setPositiveButton("تایید")
         val sp4 = findViewById(R.id.list_persons_sppiner) as Spinner
         val adapter4: ArrayAdapter<String> = ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line,
-            list_of_persons_spiner)
+            listOfPesons)
         adapter4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         sp4.setAdapter(adapter4)
         sp4.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
@@ -106,10 +105,10 @@ class ActivitySabteTakhalof3 : AppCompatActivity() {
         })
         btn_sabt_motekhalef_add_persons.setOnClickListener {
 
-                if (fard_selected != "" && !isExistInList(list, fard_selected)) {
-                    list.add(fard_selected)
+                if (fard_selected != "" && !isExistInList(listOfSelectedMeliCods, fard_selected)) {
+                    listOfSelectedMeliCods.add(fard_selected)
 
-                    persons_count_txt.setText(list.size.toString() + " نفر")
+                    persons_count_txt.setText(listOfSelectedMeliCods.size.toString() + " نفر")
                 } else {
                     if (fard_selected == "")
                         Toast.makeText(
@@ -117,7 +116,7 @@ class ActivitySabteTakhalof3 : AppCompatActivity() {
                             "کسی انتخاب نشده است.",
                             Toast.LENGTH_SHORT
                         ).show()
-                    if (isExistInList(list, fard_selected))
+                    if (isExistInList(listOfSelectedMeliCods, fard_selected))
                         Toast.makeText(
                             applicationContext,
                             "فرد انتخاب شده تکراری است.",
@@ -139,6 +138,11 @@ class ActivitySabteTakhalof3 : AppCompatActivity() {
         })
         btn_sabtetakhalof3.setOnClickListener {
             val intent = Intent(this, ActivitySabteTakhalof4::class.java)
+            startActivity(intent)
+        }
+
+        list_motekhalef.setOnClickListener {
+            val intent = Intent(this, ActivityListFard::class.java)
             startActivity(intent)
         }
     }
