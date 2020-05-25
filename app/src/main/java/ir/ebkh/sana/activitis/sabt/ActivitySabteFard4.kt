@@ -19,7 +19,7 @@ import kotlinx.android.synthetic.main.sabt_fard4.*
 class ActivitySabteFard4 : AppCompatActivity() {
 
 
-    var isRegistred=false
+    private var isRegistred=false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -16,13 +16,13 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE car(" +
                 "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE," +
-                "car_pelak_id INTEGER ," +
+                "car_pelak TEXT ," +
                 "name TEXT ," +
                 "system TEXT," +
                 "tip TEXT," +
                 "color TEXT ," +
-                "shasi_number INTEGER," +
-                "motor_number INTEGER)");
+                "shasi_number TEXT," +
+                "motor_number TEXT)");
         db.execSQL("CREATE TABLE car_plak(" +
                 "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE," +
                 "first_number INTEGER ," +

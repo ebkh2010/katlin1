@@ -96,6 +96,11 @@
         <activity
             android:name=".activitis.sabt.ActivitySabteKhodro">
         </activity>
+
+        <activity
+            android:name=".activitis.sabt.ActivitySabteKhodro2">
+        </activity>
+
     </application>
 
 </manifest>

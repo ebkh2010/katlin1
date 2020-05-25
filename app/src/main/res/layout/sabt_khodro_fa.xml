@@ -76,25 +76,25 @@
 
 
                             <EditText
-                                android:id="@+id/pelak_iran"
+                                android:id="@+id/pelak_iran_fa"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1.1"
                                 android:ems="10"
                                 android:maxLength="2"
-                                android:inputType="textPersonName" />
+                                android:inputType="number" />
 
                             <EditText
-                                android:id="@+id/pelak3"
+                                android:id="@+id/pelak3_fa"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:ems="10"
                                 android:maxLength="3"
-                                android:inputType="textPersonName" />
+                                android:inputType="number" />
 
                             <EditText
-                                android:id="@+id/pelak2"
+                                android:id="@+id/pelak2_fa"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1.1"
@@ -103,13 +103,13 @@
                                 android:inputType="textPersonName" />
 
                             <EditText
-                                android:id="@+id/pelak1"
+                                android:id="@+id/pelak1_fa"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:ems="10"
                                 android:maxLength="2"
-                                android:inputType="textPersonName" />
+                                android:inputType="number" />
 
                             <TextView
                                 android:id="@+id/textView2"
@@ -129,7 +129,7 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <EditText
-                        android:id="@+id/khodro_name"
+                        android:id="@+id/khodro_name_fa"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="70dp"
@@ -140,7 +140,7 @@
                         android:inputType="textPersonName" />
 
                     <EditText
-                        android:id="@+id/khodro_system"
+                        android:id="@+id/khodro_system_fa"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="70dp"
@@ -151,7 +151,7 @@
                         android:inputType="textPersonName" />
 
                     <EditText
-                        android:id="@+id/khodro_tip"
+                        android:id="@+id/khodro_tip_fa"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="70dp"
@@ -188,7 +188,7 @@
                 app:srcCompat="@drawable/alfablank1" />
 
             <ImageView
-                android:id="@+id/btn_sabtetakhalof2"
+                android:id="@+id/btn_sabtekhodro_fa"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="3.2"

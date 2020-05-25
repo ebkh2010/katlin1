@@ -25,7 +25,7 @@ class ActivitySabteTakhalof2 : AppCompatActivity() {
 
         searchablespinner_add_takhalof.setTitle("جستجو و انتخاب کنید")
         searchablespinner_add_takhalof.setPositiveButton("تایید")
-        val spast2 = findViewById(R.id.list_persons_sppiner) as Spinner
+        val spast2 = findViewById(R.id.searchablespinner_add_takhalof) as Spinner
         val adapterast2: ArrayAdapter<String> = ArrayAdapter<String>(this,
             android.R.layout.simple_dropdown_item_1line,
             list_of_takhalof_model

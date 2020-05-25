@@ -21,6 +21,10 @@ public class G extends Application {
                                             takhalofSaat="",
                                             takhalofModel="",
                                             takhalofModelComment="",
+    carPelak="",
+    carName="",
+    carSystem="",
+    carTip="",
                                             kode_meli="",
                                             name="",
                                             lastname="",
@@ -34,8 +38,10 @@ public class G extends Application {
                                             job_comment_stat="",
                                             mobile="",
                                             phone="",
-                                            other_numbers="";
+                                            other_numbers=""
+                                                    ;
     public static ArrayList<String>         listOfSelectedMeliCods = new ArrayList<String>(),
+                                            listOfSelectedCArPelaks = new ArrayList<>(),
                                             listOfPesons = new ArrayList<String>();
     public static ArrayList<Person>         listOfSelectedPersons = new ArrayList<Person>();
 
