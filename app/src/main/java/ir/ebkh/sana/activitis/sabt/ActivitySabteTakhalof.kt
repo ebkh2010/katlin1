@@ -17,6 +17,7 @@ import ir.hamsaa.persiandatepicker.PersianDatePickerDialog
 import ir.hamsaa.persiandatepicker.util.PersianCalendar
 import com.michaldrabik.classicmaterialtimepicker.model.CmtpTime12.PmAm.PM
 import ir.ebkh.sana.activitis.estelam.ActivityEstelam
+import ir.ebkh.sana.main.G
 
 
 class ActivitySabteTakhalof : AppCompatActivity() {
@@ -71,6 +72,10 @@ class ActivitySabteTakhalof : AppCompatActivity() {
             false
         })
         btn_sabt_takhalof_next.setOnClickListener {
+
+            G.takhalofSanaCod = sana_new_cod.text.toString()
+            G.takhalofTarikh = takhalof_date.text.toString()
+            G.takhalofSaat = takhalof_time.text.toString()
             val intent = Intent(this, ActivitySabteTakhalof2::class.java)
             startActivity(intent)
             finish()

@@ -16,6 +16,11 @@ public class G extends Application {
                                             APP_SD_DIR              = DIR_SDCARD + "/sana",
                                             DB_SD_DIR               = APP_SD_DIR + "/DB";
     public static  String
+                                            takhalofSanaCod="",
+                                            takhalofTarikh="",
+                                            takhalofSaat="",
+                                            takhalofModel="",
+                                            takhalofModelComment="",
                                             kode_meli="",
                                             name="",
                                             lastname="",
