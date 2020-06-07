@@ -147,11 +147,13 @@ class ActivitySabteTakhalof3 : AppCompatActivity() {
         btn_sabtetakhalof3.setOnClickListener {
             val intent = Intent(this, ActivitySabteTakhalof4::class.java)
             startActivity(intent)
+
         }
 
         list_motekhalef.setOnClickListener {
             val intent = Intent(this, ActivityListFard::class.java)
             startActivity(intent)
+
         }
     }
 

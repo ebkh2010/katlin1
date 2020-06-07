@@ -23,27 +23,27 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
                 "color TEXT ," +
                 "shasi_number TEXT," +
                 "motor_number TEXT)");
-        db.execSQL("CREATE TABLE car_plak(" +
-                "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE," +
-                "first_number INTEGER ," +
-                "harf TEXT ," +
-                "second_number INTEGER ," +
-                "iran_number INTEGER )");
+//        db.execSQL("CREATE TABLE car_plak(" +
+//                "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE," +
+//                "first_number INTEGER ," +
+//                "harf TEXT ," +
+//                "second_number INTEGER ," +
+//                "iran_number INTEGER )");
 
         db.execSQL("CREATE TABLE motor" +
                 "(" +
                 "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE," +
-                "motor_pelak_id INTEGER," +
+                "motor_pelak INTEGER," +
                 "motor_name TEXT ," +
                 "motor_system TEXT," +
                 "motor_color TEXT ," +
                 "shasi_number TEXT," +
                 "motor_number TEXT)");
-        db.execSQL("CREATE TABLE motorpelak" +
-                "(" +
-                "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE," +
-                "up_number INTEGER ," +
-                "down_number INTEGER )");
+//        db.execSQL("CREATE TABLE motorpelak" +
+//                "(" +
+//                "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE," +
+//                "up_number INTEGER ," +
+//                "down_number INTEGER )");
 
         db.execSQL("CREATE TABLE persons" +
                 "(" +

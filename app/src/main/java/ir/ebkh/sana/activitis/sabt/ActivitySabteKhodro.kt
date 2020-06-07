@@ -36,8 +36,8 @@ class ActivitySabteKhodro : AppCompatActivity() {
             })
             btn_sabtekhodro.setOnClickListener {
 
-                G.carPelak= pelak_iran.text.toString()+pelak3.text.toString()+
-                        pelak2.text.toString()+pelak1.text.toString()
+                G.carPelak= pelak_iran.text.toString()+" ایران "+pelak3.text.toString()+" "+
+                        pelak2.text.toString()+" "+pelak1.text.toString()
                 G.carName = khodro_name.text.toString()
                 G.carSystem = khodro_system.text.toString()
                 G.carTip = khodro_tip.text.toString()

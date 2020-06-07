@@ -25,6 +25,11 @@ public class G extends Application {
     carName="",
     carSystem="",
     carTip="",
+    motorPelak="",
+    motorName="",
+    motorSystem="",
+    motorColor="",
+
                                             kode_meli="",
                                             name="",
                                             lastname="",
@@ -42,7 +47,9 @@ public class G extends Application {
                                                     ;
     public static ArrayList<String>         listOfSelectedMeliCods = new ArrayList<String>(),
                                             listOfSelectedCArPelaks = new ArrayList<>(),
-                                            listOfPesons = new ArrayList<String>();
+                                            listOfPesons = new ArrayList<String>(),
+                                            listOfCars = new ArrayList<String>(),
+                                            listOfMotors = new ArrayList<String>();
     public static ArrayList<Person>         listOfSelectedPersons = new ArrayList<Person>();
 
 
