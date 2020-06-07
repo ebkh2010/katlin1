@@ -34,6 +34,7 @@ class ActivitySabteTakhalof3 : AppCompatActivity() {
 
         persons_count_txt.setText(listOfSelectedMeliCods.size.toString() + " نفر")
         //TODO تهیه لیست افراد از دیتا بیس
+        listOfPesons.clear()
         listOfPesons.add("فرد متخلف")
 
         val dbData1: Cursor = database.query(
@@ -79,6 +80,7 @@ class ActivitySabteTakhalof3 : AppCompatActivity() {
             }
         }
 
+        //اضافه کردن فرد جدید به دیتا بیس
         btn_takhalof3_add_fard.setOnTouchListener(View.OnTouchListener { v, event ->
             if (event.action == MotionEvent.ACTION_DOWN) {
                 btn_takhalof3_add_fard.setImageResource(R.drawable.pushed_btn_plus)
@@ -109,6 +111,12 @@ class ActivitySabteTakhalof3 : AppCompatActivity() {
                     listOfSelectedMeliCods.add(fard_selected)
 
                     persons_count_txt.setText(listOfSelectedMeliCods.size.toString() + " نفر")
+
+                    Toast.makeText(
+                        applicationContext,
+                        "کد ملی "+fard_selected + " به لیست اضافه شد",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 } else {
                     if (fard_selected == "")
                         Toast.makeText(

@@ -118,7 +118,7 @@ class ActivitySabteTakhalof : AppCompatActivity() {
     private fun  showTime12PickerDialog()  {
         val dialog = CmtpTimeDialogFragment.newInstance()
 
-        dialog.setInitialTime12(0, 0, PM)
+        dialog.setInitialTime12(1, 0, PM)
         dialog.setOnTime12PickedListener {
 //            Toast.makeText(this@ActivitySabteTakhalof, it.toString(), Toast.LENGTH_SHORT).show()
             takhalof_time.setTypeface(Typeface.createFromAsset(assets, "Shabnam-Light-FD.ttf"))
