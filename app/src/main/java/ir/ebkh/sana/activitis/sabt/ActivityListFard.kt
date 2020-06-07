@@ -37,7 +37,7 @@ class ActivityListFard : AppCompatActivity() {
     }
 
 
-    // این تابع از دیتا بیس db جدول tebl همه شمشخصات آیتمهایی که در ستون col دارای مقادیر item هستند را به صورت کرسر باز میگرداند
+    // این تابع از دیتا بیس db جدول tebl همه مشخصات آیتمهایی که در ستون col دارای مقادیر item هستند را به صورت کرسر باز میگرداند
     fun getData(db: SQLiteDatabase, tabl: String, col: String, items: ArrayList<String>): Cursor {
 
         var selectALLQuery = "SELECT * FROM " + tabl +" WHERE "

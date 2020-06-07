@@ -43,6 +43,7 @@ public class G extends Application {
     public static ArrayList<String>         listOfSelectedMeliCods = new ArrayList<String>(),
                                             listOfSelectedCArPelaks = new ArrayList<>(),
                                             listOfSelectedMotorPelaks = new ArrayList<>(),
+                                            listOfPelaks = new ArrayList<>(),
                                             listOfPesons = new ArrayList<String>(),
                                             listOfCars = new ArrayList<String>(),
                                             listOfMotors = new ArrayList<String>();

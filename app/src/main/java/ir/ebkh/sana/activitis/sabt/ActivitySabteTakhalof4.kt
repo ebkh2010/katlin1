@@ -181,6 +181,11 @@ class ActivitySabteTakhalof4 : AppCompatActivity() {
             finish()
         }
 
+        list_car_motor.setOnClickListener {
+            val intent = Intent(this, ActivityListCarAndMotors::class.java)
+            startActivity(intent)
+            finish()
+        }
 
         btn_sabtetakhalof4.setOnTouchListener(View.OnTouchListener { v, event ->
             if (event.action == MotionEvent.ACTION_DOWN) {
@@ -196,6 +201,8 @@ class ActivitySabteTakhalof4 : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
+
 
     }
 

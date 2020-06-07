@@ -74,6 +74,10 @@
         </activity>
 
         <activity
+            android:name=".activitis.sabt.ActivityListCarAndMotors">
+        </activity>
+
+        <activity
             android:name=".activitis.sabt.ActivitySabteTakhalof">
         </activity>
 
