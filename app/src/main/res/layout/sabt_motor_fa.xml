@@ -75,7 +75,7 @@
                                 android:layout_weight=".8">
 
                                 <EditText
-                                    android:id="@+id/pelak_motor_1"
+                                    android:id="@+id/pelak_motor_p1_fa"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
@@ -92,7 +92,7 @@
                             </LinearLayout>
 
                             <EditText
-                                android:id="@+id/pelak_motor_2"
+                                android:id="@+id/pelak_motor_p2_fa"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
@@ -113,7 +113,7 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <EditText
-                        android:id="@+id/estelam_motor_model"
+                        android:id="@+id/sabt_motor_name_fa"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="70dp"
@@ -124,7 +124,7 @@
                         android:inputType="textPersonName" />
 
                     <EditText
-                        android:id="@+id/estelam_motor_system"
+                        android:id="@+id/sabt_motor_system_fa"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="70dp"
@@ -135,7 +135,7 @@
                         android:inputType="textPersonName" />
 
                     <EditText
-                        android:id="@+id/estelam_motor_color"
+                        android:id="@+id/sabt_motor_color_fa"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="70dp"

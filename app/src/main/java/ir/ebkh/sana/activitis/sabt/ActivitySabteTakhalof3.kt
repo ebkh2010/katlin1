@@ -30,8 +30,6 @@ class ActivitySabteTakhalof3 : AppCompatActivity() {
         setContentView(R.layout.sabt_takhalof3)
         persons_count_txt.setTypeface(Typeface.createFromAsset(assets, "Shabnam-Light-FD.ttf"))
 
-
-
         persons_count_txt.setText(listOfSelectedMeliCods.size.toString() + " نفر")
         //TODO تهیه لیست افراد از دیتا بیس
         listOfPesons.clear()

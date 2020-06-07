@@ -44,7 +44,7 @@ class ActivitySabteKhodro2 : AppCompatActivity() {
                 G.carSystem = ""
             }
 
-            val intent = Intent(this, ActivitySabteKhodro::class.java)
+            val intent = Intent(this, ActivitySabteTakhalof4::class.java)
             startActivity(intent)
             finish()
 
