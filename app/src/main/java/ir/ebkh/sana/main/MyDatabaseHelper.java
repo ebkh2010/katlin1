@@ -22,7 +22,8 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
                 "tip TEXT," +
                 "color TEXT ," +
                 "shasi_number TEXT," +
-                "motor_number TEXT)");
+                "motor_number TEXT," +
+                "malek TEXT)" );
 //        db.execSQL("CREATE TABLE car_plak(" +
 //                "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE," +
 //                "first_number INTEGER ," +
@@ -38,7 +39,8 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
                 "motor_system TEXT," +
                 "motor_color TEXT ," +
                 "shasi_number TEXT," +
-                "motor_number TEXT)");
+                "motor_number TEXT,"+
+                "malek TEXT)");
 //        db.execSQL("CREATE TABLE motorpelak" +
 //                "(" +
 //                "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE," +
@@ -66,17 +68,12 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         db.execSQL( "CREATE TABLE place" +
                 "(" +
                 "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE," +
-                "name TEXT," +
+                "ostan TEXT," +
                 "shahr TEXT ," +
-                "mantaghe TEXT ," +
-                "khiban_asli TEXT ," +
-                "mahale TEXT," +
-                "khiaban_fari TEXT," +
                 "adress TEXT ," +
-                "kuche TEXT," +
-                "pelak INTEGER," +
                 "name_vahed TEXT," +
                 "senf_vahed TEXT," +
+                "malek TEXT," +
                 "tozohat TEXT)");
         db.execSQL( "CREATE TABLE takhalof" +
                 "(" +

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/sabt_khodro2_mail_layout"
     tools:context=".activitis.sabt.ActivitySabteKhodro">
 
     <LinearLayout
@@ -16,7 +17,7 @@
 
 
         <ImageView
-            android:id="@+id/image"
+            android:id="@+id/b53"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="120dp"
@@ -50,7 +51,7 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:id="@+id/imageView7"
+                        android:id="@+id/b54"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="2.9"
@@ -92,7 +93,7 @@
                         android:inputType="number" />
 
                     <ImageView
-                        android:id="@+id/imageView8"
+                        android:id="@+id/b55"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="2.8"
@@ -101,7 +102,7 @@
                 </LinearLayout>
 
                 <ImageView
-                    android:id="@+id/imageView3"
+                    android:id="@+id/b56"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -111,7 +112,7 @@
                     app:srcCompat="@drawable/frame_sabte_khodro" />
             </androidx.constraintlayout.widget.ConstraintLayout>
             <ImageView
-                android:id="@+id/imageView22"
+                android:id="@+id/b57"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="3.5"
@@ -125,7 +126,7 @@
                 app:srcCompat="@drawable/btn_next" />
 
             <ImageView
-                android:id="@+id/imageView5"
+                android:id="@+id/btn_next2_sabt_motor"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="3.2"

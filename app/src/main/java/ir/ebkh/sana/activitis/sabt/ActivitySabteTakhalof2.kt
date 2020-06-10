@@ -56,7 +56,7 @@ class ActivitySabteTakhalof2 : AppCompatActivity() {
             G.takhalofModelComment = takhalof_comment.text.toString()
             val intent = Intent(this, ActivitySabteTakhalof3::class.java)
             startActivity(intent)
-            finish()
+            fullFinish()
         }
 
 
@@ -66,7 +66,16 @@ class ActivitySabteTakhalof2 : AppCompatActivity() {
 
         val intent = Intent(this, ActivitySabteTakhalof::class.java)
         startActivity(intent)
-        finish()
+        fullFinish()
+    }
 
+    private fun fullFinish(){
+        btn_sabtetakhalof2.setImageDrawable(null)
+        b9.setImageDrawable(null)
+        b10.setImageDrawable(null)
+        b11.setImageDrawable(null)
+        b12.setImageDrawable(null)
+        sabt_takhalof2_mail_layout.removeAllViews()
+        finish()
     }
 }

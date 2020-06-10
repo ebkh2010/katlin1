@@ -103,7 +103,7 @@ class ActivitySabteTakhalof4 : AppCompatActivity() {
         btn_add_car.setOnClickListener {
             val intent = Intent(this, ActivitySabteKhodro::class.java)
             startActivity(intent)
-            finish()
+            fullfinish()
         }
 
 
@@ -178,13 +178,13 @@ class ActivitySabteTakhalof4 : AppCompatActivity() {
         add_motor.setOnClickListener {
             val intent = Intent(this, ActivitySabteMotor::class.java)
             startActivity(intent)
-            finish()
+            fullfinish()
         }
 
         list_car_motor.setOnClickListener {
             val intent = Intent(this, ActivityListCarAndMotors::class.java)
             startActivity(intent)
-            finish()
+            fullfinish()
         }
 
         btn_sabtetakhalof4.setOnTouchListener(View.OnTouchListener { v, event ->
@@ -199,7 +199,7 @@ class ActivitySabteTakhalof4 : AppCompatActivity() {
         btn_sabtetakhalof4.setOnClickListener {
             val intent = Intent(this, ActivitySabteTakhalof5::class.java)
             startActivity(intent)
-            finish()
+            fullfinish()
         }
 
 
@@ -210,7 +210,7 @@ class ActivitySabteTakhalof4 : AppCompatActivity() {
 
         val intent = Intent(this, ActivitySabteTakhalof3::class.java)
         startActivity(intent)
-        finish()
+        fullfinish()
 
     }
 
@@ -273,5 +273,22 @@ class ActivitySabteTakhalof4 : AppCompatActivity() {
             dbData3.close()
         }
         dbData3.close()
+    }
+
+    private fun fullfinish(){
+        b17.setImageDrawable(null)
+        b18.setImageDrawable(null)
+        b19.setImageDrawable(null)
+        b20.setImageDrawable(null)
+        btn_add_car.setImageDrawable(null)
+        btn_select_car.setImageDrawable(null)
+        add_motor.setImageDrawable(null)
+        btn_sabt_motor.setImageDrawable(null)
+        list_car_motor.setImageDrawable(null)
+        btn_sabtetakhalof4.setImageDrawable(null)
+
+        sabt_takhalof4_mail_layout.removeAllViews()
+
+        finish()
     }
 }

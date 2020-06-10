@@ -46,18 +46,26 @@ class ActivitySabteKhodro2 : AppCompatActivity() {
 
             val intent = Intent(this, ActivitySabteTakhalof4::class.java)
             startActivity(intent)
-            finish()
-
+            fullfinish()
         }
-
-
     }
 
     override fun onBackPressed() {
-
-
         val intent = Intent(this, ActivitySabteKhodro::class.java)
         startActivity(intent)
+        fullfinish()
+    }
+
+    private fun fullfinish(){
+        b53.setImageDrawable(null)
+        b54.setImageDrawable(null)
+        b55.setImageDrawable(null)
+        b56.setImageDrawable(null)
+        b57.setImageDrawable(null)
+        btn_next2_sabt_motor.setImageDrawable(null)
+        btn_sabtekhodro2.setImageDrawable(null)
+
+        sabt_khodro2_mail_layout.removeAllViews()
         finish()
 
     }

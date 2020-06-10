@@ -1,6 +1,7 @@
 package ir.ebkh.sana.activitis.sabt
 
 
+import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
@@ -11,6 +12,7 @@ import ir.ebkh.sana.R
 import ir.ebkh.sana.activitis.sabt.Adapters.CustomAdapter
 import ir.ebkh.sana.main.G.*
 import ir.ebkh.sana.main.Person
+import kotlinx.android.synthetic.main.list_fard.*
 import java.util.*
 
 
@@ -88,6 +90,13 @@ class ActivityListFard : AppCompatActivity() {
             c.moveToNext()
         }
         c.close()
+    }
+
+    override fun onBackPressed() {
+        val intent = Intent(this, ActivitySabteTakhalof3::class.java)
+        startActivity(intent)
+        listfard_layout.removeAllViews()
+        finish()
     }
 
 

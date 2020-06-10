@@ -76,6 +76,7 @@ class ActivitySabteFard4 : AppCompatActivity() {
 
             val intent = Intent(this, ActivitySabteTakhalof3::class.java)
             startActivity(intent)
+            fullfinish()
         }
 
         btn_new_sabtefard4.setOnTouchListener(View.OnTouchListener { v, event ->
@@ -128,7 +129,7 @@ class ActivitySabteFard4 : AppCompatActivity() {
 
             val intent = Intent(this, ActivitySabteFard::class.java)
             startActivity(intent)
-            finish()
+            fullfinish()
         }
 
     }
@@ -137,7 +138,18 @@ class ActivitySabteFard4 : AppCompatActivity() {
 
         val intent = Intent(this, ActivitySabteFard2::class.java)
         startActivity(intent)
-        finish()
+        fullfinish()
 
+    }
+
+    private fun fullfinish(){
+        b37.setImageDrawable(null)
+        b38.setImageDrawable(null)
+        b39.setImageDrawable(null)
+        b40.setImageDrawable(null)
+        btn_back_sabtefard4.setImageDrawable(null)
+        btn_new_sabtefard4.setImageDrawable(null)
+        sabt_fard4_mail_layout.removeAllViews()
+        finish()
     }
 }

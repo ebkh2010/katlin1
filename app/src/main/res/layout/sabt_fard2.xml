@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/sabt_fard2_mail_layout"
     tools:context=".activitis.sabt.ActivitySabteFard2">
 
     <LinearLayout
@@ -14,7 +15,7 @@
 
 
         <ImageView
-            android:id="@+id/image"
+            android:id="@+id/b29"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1.9"
@@ -48,7 +49,7 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:id="@+id/imageView7"
+                        android:id="@+id/b30"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         app:srcCompat="@drawable/alfablank1"
@@ -68,43 +69,6 @@
                         android:textColor="#000000"
                          />
 
-<!--                    <LinearLayout-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="match_parent"-->
-<!--                        android:layout_weight="1.08"-->
-<!--                        android:orientation="horizontal"-->
-<!--                        android:layout_marginRight="70dp"-->
-<!--                        android:layout_marginLeft="70dp">-->
-
-
-
-<!--                        <EditText-->
-<!--                            android:id="@+id/year"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="match_parent"-->
-<!--                            android:layout_weight="1"-->
-<!--                            android:ems="10"-->
-<!--                            android:inputType="number"-->
-<!--                            android:text="سال" />-->
-
-<!--                        <EditText-->
-<!--                            android:id="@+id/mounth"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="match_parent"-->
-<!--                            android:layout_weight="1"-->
-<!--                            android:ems="10"-->
-<!--                            android:inputType="number"-->
-<!--                            android:text="ماه" />-->
-
-<!--                        <EditText-->
-<!--                            android:id="@+id/day"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="match_parent"-->
-<!--                            android:layout_weight="1"-->
-<!--                            android:ems="10"-->
-<!--                            android:inputType="number"-->
-<!--                            android:text="روز" />-->
-<!--                    </LinearLayout>-->
 
                     <TextView
                         android:id="@+id/txt_born_date"
@@ -150,7 +114,7 @@
                         android:entries="@array/school_arrays"/>
 
                     <ImageView
-                        android:id="@+id/imageView8"
+                        android:id="@+id/b31"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         app:srcCompat="@drawable/alfablank1"
@@ -159,7 +123,7 @@
                 </LinearLayout>
 
                 <ImageView
-                    android:id="@+id/imageView3"
+                    android:id="@+id/b32"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     app:layout_constraintBottom_toBottomOf="parent"

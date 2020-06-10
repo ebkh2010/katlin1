@@ -104,6 +104,7 @@ class ActivitySabteFard2 : AppCompatActivity() {
 
             val intent = Intent(this, ActivitySabteFard3::class.java)
             startActivity(intent)
+            fullfinish()
         }
     }
 
@@ -140,7 +141,18 @@ class ActivitySabteFard2 : AppCompatActivity() {
 
         val intent = Intent(this, ActivitySabteFard::class.java)
         startActivity(intent)
-        finish()
+        fullfinish()
 
+    }
+
+    private fun fullfinish(){
+        b29.setImageDrawable(null)
+        b30.setImageDrawable(null)
+        b31.setImageDrawable(null)
+        b32.setImageDrawable(null)
+        btn_date_born.setImageDrawable(null)
+        btn_sabtefard2.setImageDrawable(null)
+        sabt_fard2_mail_layout.removeAllViews()
+        finish()
     }
 }

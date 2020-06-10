@@ -78,9 +78,7 @@ class ActivitySabteTakhalof : AppCompatActivity() {
             G.takhalofSaat = takhalof_time.text.toString()
             val intent = Intent(this, ActivitySabteTakhalof2::class.java)
             startActivity(intent)
-            finish()
-
-
+            fullFinish()
         }
 
     }
@@ -132,8 +130,20 @@ class ActivitySabteTakhalof : AppCompatActivity() {
 
         val intent = Intent(this, ActivityEstelam::class.java)
         startActivity(intent)
-        finish()
+        fullFinish ()
 
+    }
+
+    private fun fullFinish (){
+        btn_takhalof_date.setImageDrawable(null)
+        btn_takhalof_time.setImageDrawable(null)
+        btn_sabt_takhalof_next.setImageDrawable(null)
+        b5.setImageDrawable(null)
+        b6.setImageDrawable(null)
+        b7.setImageDrawable(null)
+        b8.setImageDrawable(null)
+        sabt_takhalof_mail_layout.removeAllViews()
+        finish()
     }
 
 }

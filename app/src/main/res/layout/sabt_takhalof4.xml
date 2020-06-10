@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/sabt_takhalof4_mail_layout"
     tools:context=".activitis.sabt.ActivitySabteTakhalof4">
 
     <LinearLayout
@@ -16,7 +17,7 @@
 
 
         <ImageView
-            android:id="@+id/image"
+            android:id="@+id/b17"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="120dp"
@@ -50,7 +51,7 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:id="@+id/imageView7"
+                        android:id="@+id/b18"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="2.9"
@@ -151,7 +152,7 @@
 
 
                     <ImageView
-                        android:id="@+id/imageView8"
+                        android:id="@+id/b19"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="3.2"
@@ -160,7 +161,7 @@
                 </LinearLayout>
 
                 <ImageView
-                    android:id="@+id/imageView3"
+                    android:id="@+id/b20"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="45dp"

@@ -13,7 +13,7 @@ import java.util.*
 
 class ActivitySabteKhodro : AppCompatActivity() {
 
-    var englishLayout=false
+    private var englishLayout=false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,7 +44,7 @@ class ActivitySabteKhodro : AppCompatActivity() {
 
                 val intent = Intent(this, ActivitySabteKhodro2::class.java)
                 startActivity(intent)
-                finish()
+                fullfinish()
             }
         }
         else
@@ -74,7 +74,7 @@ class ActivitySabteKhodro : AppCompatActivity() {
 
                 val intent = Intent(this, ActivitySabteKhodro2::class.java)
                 startActivity(intent)
-                finish()
+                fullfinish_fa()
             }
         }
 
@@ -82,11 +82,38 @@ class ActivitySabteKhodro : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-
-
         val intent = Intent(this, ActivitySabteTakhalof4::class.java)
         startActivity(intent)
-        finish()
+        if (englishLayout)
+            fullfinish()
+        else
+            fullfinish_fa()
 
+    }
+
+    private fun fullfinish(){
+        b41.setImageDrawable(null)
+        b42.setImageDrawable(null)
+        b43.setImageDrawable(null)
+        b44.setImageDrawable(null)
+        b45.setImageDrawable(null)
+        b46.setImageDrawable(null)
+        btn_sabtekhodro.setImageDrawable(null)
+        btn_next_sabt_motor.setImageDrawable(null)
+
+        sabt_khodro_mail_layout.removeAllViews()
+    }
+
+    private fun fullfinish_fa(){
+        b47.setImageDrawable(null)
+        b48.setImageDrawable(null)
+        b49.setImageDrawable(null)
+        b50.setImageDrawable(null)
+        b51.setImageDrawable(null)
+        b52.setImageDrawable(null)
+        btn_sabtekhodro_fa.setImageDrawable(null)
+        btn_next_sabt_motor_fa.setImageDrawable(null)
+
+        sabt_khodro_fa_mail_layout.removeAllViews()
     }
 }

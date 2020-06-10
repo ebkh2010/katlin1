@@ -91,6 +91,7 @@ class ActivitySabteTakhalof3 : AppCompatActivity() {
         btn_takhalof3_add_fard.setOnClickListener {
             val intent = Intent(this, ActivitySabteFard::class.java)
             startActivity(intent)
+            fullfinish()
 
         }
 
@@ -145,12 +146,14 @@ class ActivitySabteTakhalof3 : AppCompatActivity() {
         btn_sabtetakhalof3.setOnClickListener {
             val intent = Intent(this, ActivitySabteTakhalof4::class.java)
             startActivity(intent)
+            fullfinish()
 
         }
 
         list_motekhalef.setOnClickListener {
             val intent = Intent(this, ActivityListFard::class.java)
             startActivity(intent)
+            fullfinish()
 
         }
     }
@@ -161,7 +164,7 @@ class ActivitySabteTakhalof3 : AppCompatActivity() {
 
         val intent = Intent(this, ActivitySabteTakhalof2::class.java)
         startActivity(intent)
-        finish()
+        fullfinish()
 
     }
 
@@ -175,5 +178,20 @@ class ActivitySabteTakhalof3 : AppCompatActivity() {
                 if (list[i]==item) isEIL=true
             }
         return isEIL
+    }
+
+    private fun fullfinish(){
+        b13.setImageDrawable(null)
+        b14.setImageDrawable(null)
+        b15.setImageDrawable(null)
+        b16.setImageDrawable(null)
+        btn_sabtetakhalof3.setImageDrawable(null)
+        list_motekhalef.setImageDrawable(null)
+        btn_sabt_motekhalef_add_persons.setImageDrawable(null)
+        btn_takhalof3_add_fard.setImageDrawable(null)
+
+        sabt_takhalof3_mail_layout.removeAllViews()
+
+        finish()
     }
 }

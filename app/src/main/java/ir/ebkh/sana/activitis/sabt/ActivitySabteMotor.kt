@@ -16,12 +16,16 @@ import java.util.*
 class ActivitySabteMotor : AppCompatActivity() {
 
     var isRegistred =false
+    private var englishLayout=false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        englishLayout=true
 
         if (Locale.getDefault().getDisplayLanguage()== "English")
         {
             setContentView(R.layout.sabt_motor)
+            englishLayout=true
             btn_sabtemotor.setOnTouchListener(View.OnTouchListener { v, event ->
                 if (event.action == MotionEvent.ACTION_DOWN) {
                     btn_sabtemotor.setImageResource(R.drawable.pushedd_sabte_sana)
@@ -46,12 +50,13 @@ class ActivitySabteMotor : AppCompatActivity() {
 
                 val intent = Intent(this, ActivitySabteKhodro::class.java)
                 startActivity(intent)
-                finish()
+                fulfinish()
             }
         }
         else
         {
             setContentView(R.layout.sabt_motor_fa)
+            englishLayout=false
             btn_sabtemotor_fa.setOnTouchListener(View.OnTouchListener { v, event ->
                 if (event.action == MotionEvent.ACTION_DOWN) {
                     btn_sabtemotor_fa.setImageResource(R.drawable.pushedd_sabte_sana)
@@ -86,6 +91,34 @@ class ActivitySabteMotor : AppCompatActivity() {
 
         val intent = Intent(this, ActivitySabteTakhalof4::class.java)
         startActivity(intent)
+        if (englishLayout)
+           fulfinish()
+        else
+            fulfinish_fa()
+
+
+    }
+
+    private fun fulfinish(){
+        b58.setImageDrawable(null)
+        b59.setImageDrawable(null)
+        b60.setImageDrawable(null)
+        b61.setImageDrawable(null)
+        b62.setImageDrawable(null)
+        btn_sabtemotor.setImageDrawable(null)
+        sabt_motor_mail_layout.removeAllViews()
+        finish()
+
+    }
+
+    private fun fulfinish_fa(){
+        b63.setImageDrawable(null)
+        b64.setImageDrawable(null)
+        b65.setImageDrawable(null)
+        b66.setImageDrawable(null)
+        b67.setImageDrawable(null)
+        btn_sabtemotor_fa.setImageDrawable(null)
+        sabt_motor_fa_mail_layout.removeAllViews()
         finish()
 
     }

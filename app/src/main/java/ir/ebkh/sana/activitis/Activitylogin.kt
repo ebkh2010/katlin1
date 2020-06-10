@@ -35,13 +35,21 @@ class Activitylogin : AppCompatActivity() {
 //                {
                     val intent = Intent(this, ActivityEstelam::class.java)
                     startActivity(intent)
-                    finish()
+                    fullFinish()
 //                }
         }
 
     }
 
     override fun onBackPressed() {
+        fullFinish()
+    }
+
+    private fun fullFinish(){
+        btn_login.setImageDrawable(null)
+        ghove_login.setImageDrawable(null)
+        login_main_layout.removeAllViews()
         finish()
     }
+
 }

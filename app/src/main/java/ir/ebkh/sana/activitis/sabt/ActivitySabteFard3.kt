@@ -42,23 +42,6 @@ class ActivitySabteFard3 : AppCompatActivity() {
         }
 
 
-//        btn_sabtefard3.setOnClickListener {
-//            job_comment_stat = job_comment.text.toString()
-//
-//            var sqlq="INSERT INTO persons(kode_meli,first_name,last_name,gender," +
-//                    "father_name,tavalod_date,tavalod_city,tahsilat,taahol,job,job_comment) " +
-//                    "VALUES ('"+kode_meli+"','"+name+"','"+lastname+"','"+gender+"','"+ fathername+"','"+
-//                    born_date+"','"+ born_city+"','"+ school_stat+"','"+ marage_stat+"','"+ job_stat+"','"+ job_comment_stat+"')";
-//
-//            try {
-//                database.execSQL(sqlq)
-//            }catch (e: NumberFormatException) {
-//                println("kodmelli") }
-//
-//            val intent = Intent(this, ActivitySabteTakhalof3::class.java)
-//            startActivity(intent)
-//        }
-
         btn_sabtefard3.setOnTouchListener(View.OnTouchListener { v, event ->
             if (event.action == MotionEvent.ACTION_DOWN) {
                 btn_sabtefard3.setImageResource(R.drawable.pushed_btn_next)
@@ -71,20 +54,10 @@ class ActivitySabteFard3 : AppCompatActivity() {
         btn_sabtefard3.setOnClickListener {
             job_comment_stat = job_comment.text.toString()
 
-//            var sqlq="INSERT INTO persons(kode_meli,first_name,last_name,gender," +
-//                    "father_name,tavalod_date,tavalod_city,tahsilat,taahol,job,job_comment) " +
-//                    "VALUES ('"+kode_meli+"','"+name+"','"+lastname+"','"+gender+"','"+ fathername+"','"+
-//                    born_date+"','"+ born_city+"','"+ school_stat+"','"+ marage_stat+"','"+ job_stat+"','"+ job_comment_stat+"')";
-//
-//
-//            try {
-//                database.execSQL(sqlq)
-//            }catch (e: NumberFormatException) {
-//                println("kodmelli") }
 
             val intent = Intent(this, ActivitySabteFard4::class.java)
             startActivity(intent)
-            finish()
+            fullfinish()
         }
 
     }
@@ -93,7 +66,17 @@ class ActivitySabteFard3 : AppCompatActivity() {
 
         val intent = Intent(this, ActivitySabteFard2::class.java)
         startActivity(intent)
-        finish()
+        fullfinish()
 
+    }
+
+    private fun fullfinish(){
+        b33.setImageDrawable(null)
+        b34.setImageDrawable(null)
+        b35.setImageDrawable(null)
+        b36.setImageDrawable(null)
+        btn_sabtefard3.setImageDrawable(null)
+        sabt_fard3_mail_layout.removeAllViews()
+        finish()
     }
 }

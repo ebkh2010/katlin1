@@ -15,8 +15,6 @@ import java.util.*
 
 class ActivitySabteTakhalof5 : AppCompatActivity() {
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.sabt_takhalof5)
@@ -36,6 +34,7 @@ class ActivitySabteTakhalof5 : AppCompatActivity() {
         btn_sabtetakhalof5.setOnClickListener {
             val intent = Intent(this, ActivityEstelam::class.java)
             startActivity(intent)
+            fullfinish()
         }
     }
 
@@ -43,7 +42,20 @@ class ActivitySabteTakhalof5 : AppCompatActivity() {
 
         val intent = Intent(this, ActivitySabteTakhalof4::class.java)
         startActivity(intent)
-        finish()
+        fullfinish()
 
+    }
+
+    private fun fullfinish(){
+        b21.setImageDrawable(null)
+        b22.setImageDrawable(null)
+        b23.setImageDrawable(null)
+        b24.setImageDrawable(null)
+        btn_add_place.setImageDrawable(null)
+        btn_sabt_makantakhalof.setImageDrawable(null)
+        list_amaken_takhalof.setImageDrawable(null)
+        btn_sabtetakhalof5.setImageDrawable(null)
+        sabt_takhalof5_mail_layout.removeAllViews()
+        finish()
     }
 }

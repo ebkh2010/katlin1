@@ -30,7 +30,7 @@ class ActivityEstelam : AppCompatActivity() {
         btn_estelam_fard.setOnClickListener {
             val intent = Intent(this, ActivityEstelamFard::class.java)
             startActivity(intent)
-            finish()
+            fullFinish()
         }
 
         btn_estelam_makan.setOnTouchListener(OnTouchListener { v, event ->
@@ -59,7 +59,7 @@ class ActivityEstelam : AppCompatActivity() {
         btn_estelam_vasile.setOnClickListener {
             val intent = Intent(this, ActivityEstelamKhodro::class.java)
             startActivity(intent)
-            finish()
+            fullFinish()
         }
 
         btn_estelam_takhalof.setOnTouchListener(OnTouchListener { v, event ->
@@ -88,12 +88,37 @@ class ActivityEstelam : AppCompatActivity() {
         new_sana.setOnClickListener {
             val intent = Intent(this, ActivitySabteTakhalof::class.java)
             startActivity(intent)
-            finish()
+            fullFinish()
         }
 
     }
 
-    override fun onBackPressed() {
 
+    private fun fullFinish () {
+        btn_estelam_fard.setImageDrawable(null)
+        btn_estelam_makan.setImageDrawable(null)
+        btn_estelam_takhalof.setImageDrawable(null)
+        btn_estelam_vasile.setImageDrawable(null)
+        new_sana.setImageDrawable(null)
+        b1.setImageDrawable(null)
+        b2.setImageDrawable(null)
+        b3.setImageDrawable(null)
+        b4.setImageDrawable(null)
+
+        estelam_main_lyout.removeAllViews()
+
+        btn_estelam_fard.setOnClickListener(null)
+        btn_estelam_fard.setOnTouchListener(null)
+        btn_estelam_makan.setOnClickListener(null)
+        btn_estelam_makan.setOnTouchListener(null)
+        btn_estelam_vasile.setOnClickListener(null)
+        btn_estelam_vasile.setOnTouchListener(null)
+        btn_estelam_takhalof.setOnClickListener(null)
+        btn_estelam_takhalof.setOnTouchListener(null)
+        new_sana.setOnClickListener(null)
+        new_sana.setOnTouchListener(null)
+
+        Runtime.getRuntime().gc()
     }
+
 }

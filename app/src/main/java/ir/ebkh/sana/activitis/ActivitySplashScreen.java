@@ -124,4 +124,10 @@ public class ActivitySplashScreen extends Activity
         database = dbHelper.getWritableDatabase();
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        Runtime.getRuntime().gc();
+    }
+
 }

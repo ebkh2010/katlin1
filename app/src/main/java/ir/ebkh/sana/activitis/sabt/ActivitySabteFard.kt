@@ -63,7 +63,7 @@ class ActivitySabteFard : AppCompatActivity() {
             {
                 val intent = Intent(this, ActivitySabteFard2::class.java)
                 startActivity(intent)
-                finish()
+                fullfinish()
             }
             else if (existMelliCode(kode_meli))
             {
@@ -104,8 +104,19 @@ class ActivitySabteFard : AppCompatActivity() {
 
         val intent = Intent(this, ActivitySabteTakhalof3::class.java)
         startActivity(intent)
-        finish()
+        fullfinish()
 
+    }
+
+    private fun fullfinish(){
+        b25.setImageDrawable(null)
+        b26.setImageDrawable(null)
+        b27.setImageDrawable(null)
+        b28.setImageDrawable(null)
+        btn_sabtefard.setImageDrawable(null)
+
+        sabt_fard_mail_layout.removeAllViews()
+        finish()
     }
 }
 
