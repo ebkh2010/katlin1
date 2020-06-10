@@ -36,6 +36,12 @@ class ActivitySabteTakhalof5 : AppCompatActivity() {
             startActivity(intent)
             fullfinish()
         }
+
+        btn_add_place.setOnClickListener {
+            val intent = Intent(this,ActivitySabteMakan::class.java)
+            startActivity(intent)
+            fullfinish()
+        }
     }
 
     override fun onBackPressed() {

@@ -74,6 +74,10 @@
         </activity>
 
         <activity
+            android:name=".activitis.sabt.ActivitySabteMakan">
+        </activity>
+
+        <activity
             android:name=".activitis.sabt.ActivityListFard">
         </activity>
 
