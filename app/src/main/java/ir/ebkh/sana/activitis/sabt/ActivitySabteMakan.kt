@@ -1,6 +1,7 @@
 package ir.ebkh.sana.activitis.sabt
 
 import android.content.Intent
+import android.database.Cursor
 import android.os.Bundle
 import android.view.MotionEvent
 import android.view.View
@@ -18,16 +19,18 @@ import kotlinx.android.synthetic.main.sabt_makan.*
 
 class ActivitySabteMakan : AppCompatActivity() {
 
-    var ostan=""
-    var city=""
-    var ostan_index=0
+    private var ostan=""
+    private var city=""
+    private var ostan_index=0
+    private var senff=""
+    private var malek=""
 
 
-    var list_of_ostan_spiner = arrayOf("استان","قم","تهران", "فارس", "اصفهان","البرز",
+    private var list_of_ostan_spiner = arrayOf("استان","قم","تهران", "فارس", "اصفهان","البرز",
         "مرکزی","خراسان رضوی")
 
 
-    var citis = arrayOf(
+    private var citis = arrayOf(
         arrayOf("شهر"),
         arrayOf("شهر","قم","قنوات","جعفریه","کهک","دستجرد","سلفجگان"),
         arrayOf("شهر","اسلامشهر","بومهن","پاكدشت","تهران","چهاردانگه","دماوند","رودهن",
@@ -49,6 +52,10 @@ class ActivitySabteMakan : AppCompatActivity() {
         arrayOf("شهر","بجستان","بردسكن","تايباد","تربت جام","تربت حيدريه","جغتای","جوین",
             "چناران","خلیل آباد","خواف","درگز","رشتخوار","سبزوار","سرخس","طبس","طرقبه","فريمان","قوچان",
             "كاشمر","كلات","گناباد","مشهد","نيشابور"))
+
+
+    private var senf = arrayOf("صنف", "خواروبار", "دخانیات","رستوران و باغ رستوران","ورزشی","فرهنگی","پزشک","نظامی","هتل و اماکن")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.sabt_makan)
@@ -71,23 +78,112 @@ class ActivitySabteMakan : AppCompatActivity() {
             }
         }
 
+        sabt_makan_senf.setTitle("جستجو و انتخاب کنید")
+        sabt_makan_senf.setPositiveButton("تایید")
+        val spsenf = findViewById(R.id.sabt_makan_senf) as Spinner
+        val adaptersenf: ArrayAdapter<String> = ArrayAdapter<String>(this,
+            android.R.layout.simple_dropdown_item_1line, senf)
+        adaptersenf.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spsenf.setAdapter(adaptersenf)
+        spsenf.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(arg0: AdapterView<*>?, arg1: View, position: Int, id: Long) {
+                senff = senf.get(position)
+            }
+            override fun onNothingSelected(arg0: AdapterView<*>?) {
+            }
+        }
+
+        //TODO تهیه لیست افراد از دیتا بیس
+        listOfPesons.clear()
+        listOfPesons.add("مالک")
+
+        val dbData1: Cursor = database.query(
+            "persons",
+            arrayOf("first_name", "last_name","kode_meli"),
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+        )
+        if (dbData1.moveToFirst())
+        {
+            do {
+                var listName = dbData1.getString(dbData1.getColumnIndex("first_name")) + " " +
+                        dbData1.getString(dbData1.getColumnIndex("last_name")) + " (" +
+                        dbData1.getString(dbData1.getColumnIndex("kode_meli")) + ")"
+
+                listOfMeliCods.add(dbData1.getString(dbData1.getColumnIndex("kode_meli")))
+                listOfPesons.add(listName)
+
+            }while (dbData1.moveToNext())
+            dbData1.close()
+        }
+        dbData1.close()
+
+        list_persons_sppiner_malek.setTitle("جستجو و انتخاب کنید")
+        list_persons_sppiner_malek.setPositiveButton("تایید")
+        val spmperson = findViewById(R.id.list_persons_sppiner_malek) as Spinner
+        val adaptermperson: ArrayAdapter<String> = ArrayAdapter<String>(this,
+            android.R.layout.simple_dropdown_item_1line, listOfPesons)
+        adaptermperson.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spmperson.setAdapter(adaptermperson)
+        spmperson.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(arg0: AdapterView<*>?, arg1: View, position: Int, id: Long) {
+                if (position>0)
+                    malek = listOfMeliCods.get(position-1)
+            }
+            override fun onNothingSelected(arg0: AdapterView<*>?) {
+            }
+        }
+
+        btn_makan_add_malek.setOnTouchListener(View.OnTouchListener { v, event ->
+            if (event.action == MotionEvent.ACTION_DOWN) {
+                btn_makan_add_malek.setImageResource(R.drawable.pushed_btn_plus)
+            }
+            if (event.action == MotionEvent.ACTION_UP) {
+                btn_makan_add_malek.setImageResource(R.drawable.btn_plus)
+            }
+            false
+        })
+        btn_makan_add_malek.setOnClickListener {
+            refrense_activity="sabtemakan"
+            val intent = Intent(this, ActivitySabteFard::class.java)
+            startActivity(intent)
+            fullfinish()
+
+        }
 
 
 
-//        btn_sabtefard3.setOnTouchListener(View.OnTouchListener { v, event ->
-//            if (event.action == MotionEvent.ACTION_DOWN) {
-//                btn_sabtefard3.setImageResource(R.drawable.pushed_btn_next)
-//            }
-//            if (event.action == MotionEvent.ACTION_UP) {
-//                btn_sabtefard3.setImageResource(R.drawable.btn_next)
-//            }
-//            false
-//        })
-//        btn_sabtefard3.setOnClickListener {
-//            val intent = Intent(this, ActivitySabteFard4::class.java)
-//            startActivity(intent)
-//            fullfinish()
-//        }
+
+        btn_sabtemakan.setOnTouchListener(View.OnTouchListener { v, event ->
+            if (event.action == MotionEvent.ACTION_DOWN) {
+                btn_sabtemakan.setImageResource(R.drawable.pushed_btn_next)
+            }
+            if (event.action == MotionEvent.ACTION_UP) {
+                btn_sabtemakan.setImageResource(R.drawable.btn_next)
+            }
+            false
+        })
+        btn_sabtemakan.setOnClickListener {
+
+            var sqlq="INSERT INTO place(ostan,shahr,name_vahed,senf_vahed," +
+                    "malek) " +
+                    "VALUES ('"+ostan+"','"+city+"','"+sabt_makan_name.text.toString()+"','"+senff+"','"+ malek+"')";
+
+            try {
+                database.execSQL(sqlq)
+            }catch (e: NumberFormatException) {
+                println("kodmelli")
+
+            }
+
+            val intent = Intent(this, ActivitySabteFard4::class.java)
+            startActivity(intent)
+            fullfinish()
+        }
 
     }
 
@@ -110,7 +206,6 @@ class ActivitySabteMakan : AppCompatActivity() {
         spcity.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(arg0: AdapterView<*>?, arg1: View, position: Int, id: Long) {
                 city = citis[ostan_index].get(position)
-                sabt_makan_name.setText(ostan+": "+city)
             }
             override fun onNothingSelected(arg0: AdapterView<*>?) {
             }
@@ -118,12 +213,13 @@ class ActivitySabteMakan : AppCompatActivity() {
 
     }
     private fun fullfinish(){
-        b33.setImageDrawable(null)
-        b34.setImageDrawable(null)
-        b35.setImageDrawable(null)
-        b36.setImageDrawable(null)
-        btn_sabtefard3.setImageDrawable(null)
-        sabt_fard3_mail_layout.removeAllViews()
+        b80.setImageDrawable(null)
+        b81.setImageDrawable(null)
+        b82.setImageDrawable(null)
+        b83.setImageDrawable(null)
+        btn_sabtemakan.setImageDrawable(null)
+        btn_makan_add_malek.setImageDrawable(null)
+        sabtemakan_main_layout.removeAllViews()
         finish()
     }
 }

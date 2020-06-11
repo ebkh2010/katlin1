@@ -23,7 +23,7 @@ class ActivitySabteTakhalof3 : AppCompatActivity() {
 
     var fard_selected=""
 
-    var list_of_persons_meliCode: MutableList<String> = mutableListOf()
+//    var list_of_persons_meliCode: MutableList<String> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,7 +52,7 @@ class ActivitySabteTakhalof3 : AppCompatActivity() {
                         dbData1.getString(dbData1.getColumnIndex("last_name")) + " (" +
                         dbData1.getString(dbData1.getColumnIndex("kode_meli")) + ")"
 
-                list_of_persons_meliCode.add(dbData1.getString(dbData1.getColumnIndex("kode_meli")))
+                listOfMeliCods.add(dbData1.getString(dbData1.getColumnIndex("kode_meli")))
                 listOfPesons.add(listName)
 
             }while (dbData1.moveToNext())
@@ -72,7 +72,7 @@ class ActivitySabteTakhalof3 : AppCompatActivity() {
         sp4.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(arg0: AdapterView<*>?, arg1: View, position: Int, id: Long) {
                 if (position>0)
-                    fard_selected = list_of_persons_meliCode.get(position-1)
+                    fard_selected = listOfMeliCods.get(position-1)
             }
             override fun onNothingSelected(arg0: AdapterView<*>?) {
             }
@@ -90,6 +90,7 @@ class ActivitySabteTakhalof3 : AppCompatActivity() {
         })
         btn_takhalof3_add_fard.setOnClickListener {
             val intent = Intent(this, ActivitySabteFard::class.java)
+            refrense_activity="sabttakhalof3"
             startActivity(intent)
             fullfinish()
 

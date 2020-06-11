@@ -101,11 +101,14 @@ class ActivitySabteFard : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-
-        val intent = Intent(this, ActivitySabteTakhalof3::class.java)
-        startActivity(intent)
+        var intent = Intent(this, ActivitySabteTakhalof3::class.java)
+        if (refrense_activity=="sabttakhalof3")
+            startActivity(intent)
+        else if (refrense_activity=="sabtemakan"){
+            intent = Intent(this, ActivitySabteMakan::class.java)
+            startActivity(intent)
+        }
         fullfinish()
-
     }
 
     private fun fullfinish(){
@@ -114,7 +117,6 @@ class ActivitySabteFard : AppCompatActivity() {
         b27.setImageDrawable(null)
         b28.setImageDrawable(null)
         btn_sabtefard.setImageDrawable(null)
-
         sabt_fard_mail_layout.removeAllViews()
         finish()
     }

@@ -74,8 +74,13 @@ class ActivitySabteFard4 : AppCompatActivity() {
 
 
 
-            val intent = Intent(this, ActivitySabteTakhalof3::class.java)
-            startActivity(intent)
+            var intent = Intent(this, ActivitySabteTakhalof3::class.java)
+            if (refrense_activity=="sabttakhalof3")
+                startActivity(intent)
+            else if (refrense_activity=="sabtemakan"){
+                intent = Intent(this, ActivitySabteMakan::class.java)
+                startActivity(intent)
+            }
             fullfinish()
         }
 

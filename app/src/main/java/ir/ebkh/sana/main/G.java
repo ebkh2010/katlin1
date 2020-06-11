@@ -38,9 +38,11 @@ public class G extends Application {
                                             job_comment_stat="",
                                             mobile="",
                                             phone="",
-                                            other_numbers=""
+                                            other_numbers="",
+                                            refrense_activity=""
                                                     ;
     public static ArrayList<String>         listOfSelectedMeliCods = new ArrayList<String>(),
+                                            listOfMeliCods = new ArrayList<String>(),
                                             listOfSelectedCArPelaks = new ArrayList<>(),
                                             listOfSelectedMotorPelaks = new ArrayList<>(),
                                             listOfPelaks = new ArrayList<>(),
