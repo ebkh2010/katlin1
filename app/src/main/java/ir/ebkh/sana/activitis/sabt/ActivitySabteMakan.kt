@@ -19,16 +19,16 @@ import kotlinx.android.synthetic.main.sabt_makan.*
 
 class ActivitySabteMakan : AppCompatActivity() {
 
-    private var ostan=""
-    private var city=""
+//    private var ostan="" 0
+//    private var city="" 1
     private var ostan_index=0
-    private var senff=""
-    private var malek=""
+//    private var senff="" 3
+//    private var malek="" 2
+//    makan name 4
 
 
     private var list_of_ostan_spiner = arrayOf("استان","قم","تهران", "فارس", "اصفهان","البرز",
         "مرکزی","خراسان رضوی")
-
 
     private var citis = arrayOf(
         arrayOf("شهر"),
@@ -53,12 +53,13 @@ class ActivitySabteMakan : AppCompatActivity() {
             "چناران","خلیل آباد","خواف","درگز","رشتخوار","سبزوار","سرخس","طبس","طرقبه","فريمان","قوچان",
             "كاشمر","كلات","گناباد","مشهد","نيشابور"))
 
-
     private var senf = arrayOf("صنف", "خواروبار", "دخانیات","رستوران و باغ رستوران","ورزشی","فرهنگی","پزشک","نظامی","هتل و اماکن")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.sabt_makan)
+
+        for (i in 0..4) listOfData.add("")
 
 
         sabt_makan_ostan.setTitle("جستجو و انتخاب کنید")
@@ -70,7 +71,7 @@ class ActivitySabteMakan : AppCompatActivity() {
         spostan.setAdapter(adapterostan)
         spostan.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(arg0: AdapterView<*>?, arg1: View, position: Int, id: Long) {
-                ostan = list_of_ostan_spiner.get(position)
+                listOfData.add(0, list_of_ostan_spiner.get(position))
                 ostan_index=position
                 citySpiner()
             }
@@ -87,7 +88,7 @@ class ActivitySabteMakan : AppCompatActivity() {
         spsenf.setAdapter(adaptersenf)
         spsenf.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(arg0: AdapterView<*>?, arg1: View, position: Int, id: Long) {
-                senff = senf.get(position)
+                listOfData.add( 3,senf.get(position))
             }
             override fun onNothingSelected(arg0: AdapterView<*>?) {
             }
@@ -132,7 +133,7 @@ class ActivitySabteMakan : AppCompatActivity() {
         spmperson.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(arg0: AdapterView<*>?, arg1: View, position: Int, id: Long) {
                 if (position>0)
-                    malek = listOfMeliCods.get(position-1)
+                    listOfData.add( 2,listOfMeliCods.get(position-1))
             }
             override fun onNothingSelected(arg0: AdapterView<*>?) {
             }
@@ -169,18 +170,20 @@ class ActivitySabteMakan : AppCompatActivity() {
         })
         btn_sabtemakan.setOnClickListener {
 
-            var sqlq="INSERT INTO place(ostan,shahr,name_vahed,senf_vahed," +
-                    "malek) " +
-                    "VALUES ('"+ostan+"','"+city+"','"+sabt_makan_name.text.toString()+"','"+senff+"','"+ malek+"')";
+//            var sqlq="INSERT INTO place(ostan,shahr,name_vahed,senf_vahed," +
+//                    "malek) " +
+//                    "VALUES ('"+ostan+"','"+city+"','"+sabt_makan_name.text.toString()+"','"+senff+"','"+ malek+"')";
+//
+//            try {
+//                database.execSQL(sqlq)
+//            }catch (e: NumberFormatException) {
+//                println("kodmelli")
+//
+//            }
+//
 
-            try {
-                database.execSQL(sqlq)
-            }catch (e: NumberFormatException) {
-                println("kodmelli")
-
-            }
-
-            val intent = Intent(this, ActivitySabteFard4::class.java)
+            listOfData.add(4, sabt_makan_name.text.toString())
+            val intent = Intent(this, ActivitySabteMakan2::class.java)
             startActivity(intent)
             fullfinish()
         }
@@ -205,13 +208,14 @@ class ActivitySabteMakan : AppCompatActivity() {
         spcity.setAdapter(adaptercity)
         spcity.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(arg0: AdapterView<*>?, arg1: View, position: Int, id: Long) {
-                city = citis[ostan_index].get(position)
+                listOfData.add(1, citis[ostan_index].get(position))
             }
             override fun onNothingSelected(arg0: AdapterView<*>?) {
             }
         }
 
     }
+
     private fun fullfinish(){
         b80.setImageDrawable(null)
         b81.setImageDrawable(null)

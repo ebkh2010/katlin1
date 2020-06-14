@@ -46,6 +46,7 @@ public class G extends Application {
                                             listOfSelectedCArPelaks = new ArrayList<>(),
                                             listOfSelectedMotorPelaks = new ArrayList<>(),
                                             listOfPelaks = new ArrayList<>(),
+                                            listOfData= new ArrayList<>(),
                                             listOfPesons = new ArrayList<String>(),
                                             listOfCars = new ArrayList<String>(),
                                             listOfMotors = new ArrayList<String>();
