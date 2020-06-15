@@ -26,6 +26,8 @@ class ActivitySabteMakan : AppCompatActivity() {
 //    private var malek="" 2
 //    makan name 4
 
+    private var senf = arrayOf("صنف", "خواروبار", "دخانیات","رستوران و باغ رستوران",
+        "ورزشی","فرهنگی","پزشک","نظامی","هتل و اماکن")
 
     private var list_of_ostan_spiner = arrayOf("استان","قم","تهران", "فارس", "اصفهان","البرز",
         "مرکزی","خراسان رضوی")
@@ -53,7 +55,6 @@ class ActivitySabteMakan : AppCompatActivity() {
             "چناران","خلیل آباد","خواف","درگز","رشتخوار","سبزوار","سرخس","طبس","طرقبه","فريمان","قوچان",
             "كاشمر","كلات","گناباد","مشهد","نيشابور"))
 
-    private var senf = arrayOf("صنف", "خواروبار", "دخانیات","رستوران و باغ رستوران","ورزشی","فرهنگی","پزشک","نظامی","هتل و اماکن")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -71,7 +72,7 @@ class ActivitySabteMakan : AppCompatActivity() {
         spostan.setAdapter(adapterostan)
         spostan.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(arg0: AdapterView<*>?, arg1: View, position: Int, id: Long) {
-                listOfData.add(0, list_of_ostan_spiner.get(position))
+                listOfData[0]= list_of_ostan_spiner.get(position)
                 ostan_index=position
                 citySpiner()
             }
@@ -87,8 +88,9 @@ class ActivitySabteMakan : AppCompatActivity() {
         adaptersenf.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spsenf.setAdapter(adaptersenf)
         spsenf.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(arg0: AdapterView<*>?, arg1: View, position: Int, id: Long) {
-                listOfData.add( 3,senf.get(position))
+            override fun onItemSelected(arg0: AdapterView<*>?, arg1: View, position1: Int, id: Long) {
+                listOfData[3]=senf.get(position1)
+//                temp=senf.get(position1)
             }
             override fun onNothingSelected(arg0: AdapterView<*>?) {
             }
@@ -131,9 +133,9 @@ class ActivitySabteMakan : AppCompatActivity() {
         adaptermperson.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spmperson.setAdapter(adaptermperson)
         spmperson.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(arg0: AdapterView<*>?, arg1: View, position: Int, id: Long) {
-                if (position>0)
-                    listOfData.add( 2,listOfMeliCods.get(position-1))
+            override fun onItemSelected(arg0: AdapterView<*>?, arg1: View, position2: Int, id: Long) {
+                if (position2>0)
+                    listOfData[2]=listOfMeliCods.get(position2-1)
             }
             override fun onNothingSelected(arg0: AdapterView<*>?) {
             }
@@ -182,7 +184,7 @@ class ActivitySabteMakan : AppCompatActivity() {
 //            }
 //
 
-            listOfData.add(4, sabt_makan_name.text.toString())
+            listOfData[4]= sabt_makan_name.text.toString()
             val intent = Intent(this, ActivitySabteMakan2::class.java)
             startActivity(intent)
             fullfinish()
@@ -208,7 +210,7 @@ class ActivitySabteMakan : AppCompatActivity() {
         spcity.setAdapter(adaptercity)
         spcity.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(arg0: AdapterView<*>?, arg1: View, position: Int, id: Long) {
-                listOfData.add(1, citis[ostan_index].get(position))
+                listOfData[1]=citis[ostan_index].get(position)
             }
             override fun onNothingSelected(arg0: AdapterView<*>?) {
             }

@@ -6,8 +6,7 @@ import android.os.Bundle
 import ir.ebkh.sana.R
 import ir.ebkh.sana.activitis.estelam.ActivityEstelam
 import ir.ebkh.sana.main.G
-import ir.ebkh.sana.main.G.database
-import ir.ebkh.sana.main.G.listOfData
+import ir.ebkh.sana.main.G.*
 import kotlinx.android.synthetic.main.sabt_khodro.*
 import kotlinx.android.synthetic.main.sabt_khodro2.*
 import kotlinx.android.synthetic.main.sabt_makan2.*
@@ -26,11 +25,22 @@ class ActivitySabteMakan2 : AppCompatActivity() {
 
         btn_sabte_makan2.setOnClickListener {
 
-            var sqlq="INSERT INTO place(ostan,shahr,adress,name_vahed,senf_vahed," +
-                    "malek,tozohat) " +
-                    "VALUES ('"+ listOfData[0]+"','"+listOfData[1]+"','"+sabt_makan_adress.text.toString()+
-                    "','"+listOfData[2]+"','"+ listOfData[3]+"','"+listOfData[4]+
-                    "','"+sabte_makan_comment.text.toString()+"')";
+            var sqlq="INSERT INTO place(" +
+                    "ostan," +
+                    "shahr," +
+                    "adress," +
+                    "name_vahed," +
+                    "senf_vahed," +
+                    "malek," +
+                    "tozohat) " +
+                    "VALUES ('"+
+                    listOfData[0]+"','"+
+                    listOfData[1]+"','"+
+                    sabt_makan_adress.text.toString()+ "','"+
+                    listOfData[4]+"','"+
+                    listOfData[3]+"','"+
+                    listOfData[2]+ "','"+
+                    sabte_makan_comment.text.toString()+"')"
 
             try {
                 database.execSQL(sqlq)
