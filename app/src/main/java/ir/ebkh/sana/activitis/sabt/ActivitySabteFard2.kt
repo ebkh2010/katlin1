@@ -53,7 +53,7 @@ class ActivitySabteFard2 : AppCompatActivity() {
         sp.setAdapter(adapter)
         sp.onItemSelectedListener = object : OnItemSelectedListener {
             override fun onItemSelected(arg0: AdapterView<*>?, arg1: View, position: Int, id: Long) {
-                born_city = list_of_city_spiner.get(position)
+                listOfData[6] = list_of_city_spiner.get(position)
             }
             override fun onNothingSelected(arg0: AdapterView<*>?) {
             }
@@ -68,7 +68,7 @@ class ActivitySabteFard2 : AppCompatActivity() {
         sp1.setAdapter(adapter1)
         sp1.onItemSelectedListener = object : OnItemSelectedListener {
             override fun onItemSelected(arg0: AdapterView<*>?, arg1: View, position: Int, id: Long) {
-                 marage_stat = list_of_marage_spiner.get(position)
+                 listOfData[7] = list_of_marage_spiner.get(position)
             }
             override fun onNothingSelected(arg0: AdapterView<*>?) {
             }
@@ -83,7 +83,7 @@ class ActivitySabteFard2 : AppCompatActivity() {
         sp2.setAdapter(adapter2)
         sp2.onItemSelectedListener = object : OnItemSelectedListener {
             override fun onItemSelected(arg0: AdapterView<*>?, arg1: View, position: Int, id: Long) {
-                school_stat = list_of_school_spiner.get(position)
+                listOfData[8] = list_of_school_spiner.get(position)
 
             }
             override fun onNothingSelected(arg0: AdapterView<*>?) {
@@ -126,10 +126,10 @@ class ActivitySabteFard2 : AppCompatActivity() {
             .setShowInBottomSheet(false)
             .setListener(object : Listener {
                 override fun onDateSelected(persianCalendar: PersianCalendar) {
-                    born_date = persianCalendar.getPersianYear()
+                    listOfData[5] = persianCalendar.getPersianYear()
                         .toString() + "/" + persianCalendar.getPersianMonth() + "/" + persianCalendar.getPersianDay()
 //                    Toast.makeText(this@ActivitySabteTakhalof,date, Toast.LENGTH_SHORT).show()
-                    txt_born_date.setText(born_date)
+                    txt_born_date.setText(listOfData[5])
                 }
 
                 override fun onDismissed() {}

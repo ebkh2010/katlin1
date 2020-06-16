@@ -35,16 +35,14 @@ class ActivitySabteFard4 : AppCompatActivity() {
             false
         })
         btn_back_sabtefard4.setOnClickListener {
-            mobile = sabt_fard_mobile.text.toString()
-            phone = sabt_fard_phone.text.toString()
-            other_numbers = sabt_fard_other_numbers.text.toString()
-
             var sqlq="INSERT INTO persons(kode_meli,first_name,last_name,gender," +
                     "father_name,tavalod_date,tavalod_city,tahsilat,taahol,job,job_comment," +
                     "modile_number,phone_number,other_phone_numbers) " +
-                    "VALUES ('"+kode_meli+"','"+name+"','"+lastname+"','"+gender+"','"+ fathername+"','"+
-                    born_date+"','"+ born_city+"','"+ school_stat+"','"+ marage_stat+"','"+ job_stat+"','"+
-                    job_comment_stat+"','"+mobile+"','"+ phone+"','"+ other_numbers+"')";
+                    "VALUES ('"+ listOfData[0]+"','"+ listOfData[1]+"','"+ listOfData[2]+"','"+
+                    listOfData[4]+"','"+ listOfData[3]+"','"+ listOfData[5]+"','"+ listOfData[6]+"','"+
+                    listOfData[8]+"','"+ listOfData[7]+"','"+ listOfData[9]+"','"+ listOfData[10]+"','"+
+                    sabt_fard_mobile.text.toString()+"','"+ sabt_fard_phone.text.toString()+"','"+
+                    sabt_fard_other_numbers.text.toString()+"')";
 
             try {
                 database.execSQL(sqlq)
@@ -53,25 +51,6 @@ class ActivitySabteFard4 : AppCompatActivity() {
                 println("kodmelli")
                 isRegistred=false
             }
-
-            if (isRegistred)
-            {
-                kode_meli=""
-                name=""
-                lastname=""
-                gender=""
-                fathername=""
-                born_date=""
-                born_city=""
-                school_stat=""
-                marage_stat=""
-                job_stat=""
-                job_comment_stat=""
-                mobile=""
-                phone=""
-                other_numbers=""
-            }
-
 
 
             var intent = Intent(this, ActivitySabteTakhalof3::class.java)
@@ -94,43 +73,25 @@ class ActivitySabteFard4 : AppCompatActivity() {
             false
         })
         btn_new_sabtefard4.setOnClickListener {
-            mobile = sabt_fard_mobile.text.toString()
-            phone = sabt_fard_phone.text.toString()
-            other_numbers = sabt_fard_other_numbers.text.toString()
 
             var sqlq="INSERT INTO persons(kode_meli,first_name,last_name,gender," +
                     "father_name,tavalod_date,tavalod_city,tahsilat,taahol,job,job_comment," +
                     "modile_number,phone_number,other_phone_numbers) " +
-                    "VALUES ('"+kode_meli+"','"+name+"','"+lastname+"','"+gender+"','"+ fathername+"','"+
-                    born_date+"','"+ born_city+"','"+ school_stat+"','"+ marage_stat+"','"+ job_stat+"','"+
-                    job_comment_stat+"','"+mobile+"','"+ phone+"','"+ other_numbers+"')";
+                    "VALUES ('"+ listOfData[0]+"','"+ listOfData[1]+"','"+ listOfData[2]+"','"+
+                    listOfData[4]+"','"+ listOfData[3]+"','"+ listOfData[5]+"','"+ listOfData[6]+"','"+
+                    listOfData[8]+"','"+ listOfData[7]+"','"+ listOfData[9]+"','"+ listOfData[10]+"','"+
+                    sabt_fard_mobile.text.toString()+"','"+ sabt_fard_phone.text.toString()+"','"+
+                    sabt_fard_other_numbers.text.toString()+"')";
 
 
             try {
                 database.execSQL(sqlq)
-                isRegistred=true
+
             }catch (e: NumberFormatException) {
                 println("kodmelli")
-                isRegistred=false
+
             }
 
-            if (isRegistred)
-            {
-                kode_meli=""
-                name=""
-                lastname=""
-                gender=""
-                fathername=""
-                born_date=""
-                born_city=""
-                school_stat=""
-                marage_stat=""
-                job_stat=""
-                job_comment_stat=""
-                mobile=""
-                phone=""
-                other_numbers=""
-            }
 
             val intent = Intent(this, ActivitySabteFard::class.java)
             startActivity(intent)
@@ -143,7 +104,7 @@ class ActivitySabteFard4 : AppCompatActivity() {
 
         val intent = Intent(this, ActivitySabteFard2::class.java)
         startActivity(intent)
-        fullfinish()
+        finish()
 
     }
 
@@ -155,6 +116,7 @@ class ActivitySabteFard4 : AppCompatActivity() {
         btn_back_sabtefard4.setImageDrawable(null)
         btn_new_sabtefard4.setImageDrawable(null)
         sabt_fard4_mail_layout.removeAllViews()
+        listOfData=null
         finish()
     }
 }

@@ -26,7 +26,6 @@ class ActivitySabteFard3 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.sabt_fard3)
 
-
         searchablespinner_add_job.setTitle("جستجو و انتخاب کنید")
         searchablespinner_add_job.setPositiveButton("تایید")
         val sp1 = findViewById(R.id.searchablespinner_add_job) as Spinner
@@ -35,7 +34,7 @@ class ActivitySabteFard3 : AppCompatActivity() {
         sp1.setAdapter(adapter1)
         sp1.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(arg0: AdapterView<*>?, arg1: View, position: Int, id: Long) {
-                job_stat = list_of_job_spiner.get(position)
+                listOfData[9] = list_of_job_spiner.get(position)
             }
             override fun onNothingSelected(arg0: AdapterView<*>?) {
             }
@@ -52,7 +51,7 @@ class ActivitySabteFard3 : AppCompatActivity() {
             false
         })
         btn_sabtefard3.setOnClickListener {
-            job_comment_stat = job_comment.text.toString()
+            listOfData[10] = job_comment.text.toString()
 
 
             val intent = Intent(this, ActivitySabteFard4::class.java)

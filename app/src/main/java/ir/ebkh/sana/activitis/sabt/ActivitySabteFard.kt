@@ -27,13 +27,15 @@ class ActivitySabteFard : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.sabt_fard)
 
+        for (i in 0..10) listOfData.add("")
+
         val sp = findViewById(R.id.spinner_sabt_gender) as Spinner
         val adapter1: ArrayAdapter<String> = ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, list_of_gender_spiner)
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         sp.setAdapter(adapter1)
         sp.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(arg0: AdapterView<*>?, arg1: View, position: Int, id: Long) {
-                gender = list_of_gender_spiner.get(position)
+                listOfData[4] = list_of_gender_spiner.get(position)
 
             }
             override fun onNothingSelected(arg0: AdapterView<*>?) {
@@ -52,24 +54,23 @@ class ActivitySabteFard : AppCompatActivity() {
         })
         btn_sabtefard.setOnClickListener {
 
-            
-            kode_meli= sabt_fard_kodmelli.text.toString()
-            name = sabt_fard_name.text.toString()
-            lastname = sabt_fard_famil.text.toString()
-            fathername = sabt_fard_father_name.text.toString()
+            listOfData[0] = sabt_fard_kodmelli.text.toString()
+            listOfData[1] = sabt_fard_name.text.toString()
+            listOfData[2] = sabt_fard_famil.text.toString()
+            listOfData[3] = sabt_fard_father_name.text.toString()
 
-            if (kode_meli!="" && name!="" && lastname!="" && fathername!="" && gender!="جنسیت"
-                && !existMelliCode(kode_meli))
+            if (listOfData[0]!="" && listOfData[1]!="" && listOfData[2]!="" && listOfData[3]!="" && listOfData[4]!="جنسیت"
+                && !existMelliCode(listOfData[0]))
             {
                 val intent = Intent(this, ActivitySabteFard2::class.java)
                 startActivity(intent)
                 fullfinish()
             }
-            else if (existMelliCode(kode_meli))
+            else if (existMelliCode(listOfData[0]))
             {
                 Toast.makeText(applicationContext,"کد ملی تکراری است.", Toast.LENGTH_LONG).show()
             }
-            else if (kode_meli=="" || name=="" || lastname=="" || fathername=="" || gender=="جنسیت")
+            else if (listOfData[0]=="" || listOfData[1]=="" || listOfData[2]=="" || listOfData[3]=="" || listOfData[4]=="جنسیت")
             {
                 Toast.makeText(applicationContext,"داده ها ناقص است.", Toast.LENGTH_LONG).show()
             }
