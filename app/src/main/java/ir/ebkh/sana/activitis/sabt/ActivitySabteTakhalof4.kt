@@ -120,7 +120,8 @@ class ActivitySabteTakhalof4 : AppCompatActivity() {
         searchablespinner_add_motor.setTitle("جستجو و انتخاب کنید")
         searchablespinner_add_motor.setPositiveButton("تایید")
         val spmotor = findViewById(R.id.searchablespinner_add_motor) as Spinner
-        val adaptermotor: ArrayAdapter<String> = ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line,
+        val adaptermotor: ArrayAdapter<String> = ArrayAdapter<String>(this,
+            android.R.layout.simple_dropdown_item_1line,
             listOfMotors)
         adaptermotor.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spmotor.setAdapter(adaptermotor)
@@ -225,7 +226,7 @@ class ActivitySabteTakhalof4 : AppCompatActivity() {
         return isEIL
     }
 
-    fun cars_list(){
+    private fun cars_list(){
         val dbData2: Cursor = database.query(
             "car",
             arrayOf("car_pelak","name"),
@@ -250,7 +251,7 @@ class ActivitySabteTakhalof4 : AppCompatActivity() {
         dbData2.close()
     }
 
-    fun motors_list() {
+    private fun motors_list() {
         val dbData3 = database.query(
             "motor",
             arrayOf("motor_pelak","motor_name"),

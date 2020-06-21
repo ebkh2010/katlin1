@@ -11,9 +11,6 @@ import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
 import ir.ebkh.sana.R
 import ir.ebkh.sana.main.G.*
-import kotlinx.android.synthetic.main.sabt_fard.*
-import kotlinx.android.synthetic.main.sabt_fard2.*
-import kotlinx.android.synthetic.main.sabt_fard3.*
 import kotlinx.android.synthetic.main.sabt_makan.*
 
 
@@ -128,8 +125,7 @@ class ActivitySabteMakan : AppCompatActivity() {
             }
         }
 
-        resdDB()
-
+        person_list()
         list_persons_sppiner_malek.setTitle("جستجو و انتخاب کنید")
         list_persons_sppiner_malek.setPositiveButton("تایید")
         spmperson.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
@@ -158,9 +154,6 @@ class ActivitySabteMakan : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-
-
-
 
         btn_sabtemakan.setOnTouchListener(View.OnTouchListener { v, event ->
             if (event.action == MotionEvent.ACTION_DOWN) {
@@ -203,10 +196,8 @@ class ActivitySabteMakan : AppCompatActivity() {
 
     }
 
-
     //TODO تهیه لیست افراد از دیتا بیس
-    fun resdDB(){
-
+    fun person_list(){
         listOfPesons.clear()
         listOfPesons.add("مالک")
         val dbData1: Cursor = database.query(
