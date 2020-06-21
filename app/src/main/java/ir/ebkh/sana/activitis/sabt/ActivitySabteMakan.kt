@@ -21,7 +21,7 @@ class ActivitySabteMakan : AppCompatActivity() {
 
 //    private var ostan="" 0
 //    private var city="" 1
-    private var ostan_index=0
+//    private var ostan_index=0
 //    private var senff="" 3
 //    private var malek="" 2
 //    makan name 4
@@ -60,21 +60,57 @@ class ActivitySabteMakan : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.sabt_makan)
 
-        for (i in 0..4) listOfData.add("")
 
+        if (refrense_activity!="sabtemakan")for (i in 0..4)
+        {
+            listOfDataMakan.add("")
+            listOfMakanPositions.add(0)
+        }
 
-        sabt_makan_ostan.setTitle("جستجو و انتخاب کنید")
-        sabt_makan_ostan.setPositiveButton("تایید")
         val spostan = findViewById(R.id.sabt_makan_ostan) as Spinner
         val adapterostan: ArrayAdapter<String> = ArrayAdapter<String>(this,
             android.R.layout.simple_dropdown_item_1line, list_of_ostan_spiner)
         adapterostan.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spostan.setAdapter(adapterostan)
+
+
+        val spcity = findViewById(R.id.sabt_makan_shahr) as Spinner
+        val adaptercity: ArrayAdapter<String> = ArrayAdapter<String>(this,
+            android.R.layout.simple_dropdown_item_1line, citis[listOfMakanPositions[0]])
+        adaptercity.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spcity.setAdapter(adaptercity)
+
+        val spsenf = findViewById(R.id.sabt_makan_senf) as Spinner
+        val adaptersenf: ArrayAdapter<String> = ArrayAdapter<String>(this,
+            android.R.layout.simple_dropdown_item_1line, senf)
+        adaptersenf.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spsenf.setAdapter(adaptersenf)
+
+        val spmperson = findViewById(R.id.list_persons_sppiner_malek) as Spinner
+        val adaptermperson: ArrayAdapter<String> = ArrayAdapter<String>(this,
+            android.R.layout.simple_dropdown_item_1line, listOfPesons)
+        adaptermperson.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spmperson.setAdapter(adaptermperson)
+
+        if (refrense_activity=="sabtemakan")
+        {
+            refrense_activity = ""
+            spostan.setSelection(listOfMakanPositions[0])
+            spcity.setSelection(listOfMakanPositions[1])
+            spsenf.setSelection(listOfMakanPositions[3])
+            spmperson.setSelection(listOfMakanPositions[2])
+
+        }
+
+
+        sabt_makan_ostan.setTitle("جستجو و انتخاب کنید")
+        sabt_makan_ostan.setPositiveButton("تایید")
         spostan.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(arg0: AdapterView<*>?, arg1: View, position: Int, id: Long) {
-                listOfData[0]= list_of_ostan_spiner.get(position)
-                ostan_index=position
-                citySpiner()
+            override fun onItemSelected(arg0: AdapterView<*>?, arg1: View, position: Int, id: Long)
+            {
+                listOfDataMakan[0]= list_of_ostan_spiner.get(position)
+                listOfMakanPositions[0]= position
+                citySpiner(spcity)
             }
             override fun onNothingSelected(arg0: AdapterView<*>?) {
             }
@@ -82,24 +118,97 @@ class ActivitySabteMakan : AppCompatActivity() {
 
         sabt_makan_senf.setTitle("جستجو و انتخاب کنید")
         sabt_makan_senf.setPositiveButton("تایید")
-        val spsenf = findViewById(R.id.sabt_makan_senf) as Spinner
-        val adaptersenf: ArrayAdapter<String> = ArrayAdapter<String>(this,
-            android.R.layout.simple_dropdown_item_1line, senf)
-        adaptersenf.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spsenf.setAdapter(adaptersenf)
         spsenf.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(arg0: AdapterView<*>?, arg1: View, position1: Int, id: Long) {
-                listOfData[3]=senf.get(position1)
+                listOfDataMakan[3]=senf.get(position1)
+                listOfMakanPositions[3]= position1
 //                temp=senf.get(position1)
             }
             override fun onNothingSelected(arg0: AdapterView<*>?) {
             }
         }
 
-        //TODO تهیه لیست افراد از دیتا بیس
+        resdDB()
+
+        list_persons_sppiner_malek.setTitle("جستجو و انتخاب کنید")
+        list_persons_sppiner_malek.setPositiveButton("تایید")
+        spmperson.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(arg0: AdapterView<*>?, arg1: View, position2: Int, id: Long) {
+                if (position2>0) {
+                    listOfDataMakan[2] = listOfMeliCods.get(position2 - 1)
+                    listOfMakanPositions[2] = position2 - 1
+                }
+            }
+            override fun onNothingSelected(arg0: AdapterView<*>?) {
+            }
+        }
+
+        btn_makan_add_malek.setOnTouchListener(View.OnTouchListener { v, event ->
+            if (event.action == MotionEvent.ACTION_DOWN) {
+                btn_makan_add_malek.setImageResource(R.drawable.pushed_btn_plus)
+            }
+            if (event.action == MotionEvent.ACTION_UP) {
+                btn_makan_add_malek.setImageResource(R.drawable.btn_plus)
+            }
+            false
+        })
+        btn_makan_add_malek.setOnClickListener {
+            refrense_activity="sabtemakan"
+            val intent = Intent(this, ActivitySabteFard::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+
+
+
+        btn_sabtemakan.setOnTouchListener(View.OnTouchListener { v, event ->
+            if (event.action == MotionEvent.ACTION_DOWN) {
+                btn_sabtemakan.setImageResource(R.drawable.pushed_btn_next)
+            }
+            if (event.action == MotionEvent.ACTION_UP) {
+                btn_sabtemakan.setImageResource(R.drawable.btn_next)
+            }
+            false
+        })
+        btn_sabtemakan.setOnClickListener {
+
+            listOfDataMakan[4]= sabt_makan_name.text.toString()
+            val intent = Intent(this, ActivitySabteMakan2::class.java)
+            startActivity(intent)
+            fullfinish()
+        }
+
+    }
+
+    override fun onBackPressed() {
+
+    }
+
+    private fun citySpiner(ss: Spinner){
+        sabt_makan_shahr.setTitle("جستجو و انتخاب کنید")
+        sabt_makan_shahr.setPositiveButton("تایید")
+        val adapterss: ArrayAdapter<String> = ArrayAdapter<String>(this,
+            android.R.layout.simple_dropdown_item_1line, citis[listOfMakanPositions[0]])
+        adapterss.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        ss.setAdapter(adapterss)
+        ss.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(arg0: AdapterView<*>?, arg1: View, position: Int, id: Long) {
+                listOfDataMakan[1]=citis[listOfMakanPositions[0]].get(position)
+                listOfMakanPositions[1] = position
+            }
+            override fun onNothingSelected(arg0: AdapterView<*>?) {
+            }
+        }
+
+    }
+
+
+    //TODO تهیه لیست افراد از دیتا بیس
+    fun resdDB(){
+
         listOfPesons.clear()
         listOfPesons.add("مالک")
-
         val dbData1: Cursor = database.query(
             "persons",
             arrayOf("first_name", "last_name","kode_meli"),
@@ -125,99 +234,7 @@ class ActivitySabteMakan : AppCompatActivity() {
         }
         dbData1.close()
 
-        list_persons_sppiner_malek.setTitle("جستجو و انتخاب کنید")
-        list_persons_sppiner_malek.setPositiveButton("تایید")
-        val spmperson = findViewById(R.id.list_persons_sppiner_malek) as Spinner
-        val adaptermperson: ArrayAdapter<String> = ArrayAdapter<String>(this,
-            android.R.layout.simple_dropdown_item_1line, listOfPesons)
-        adaptermperson.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spmperson.setAdapter(adaptermperson)
-        spmperson.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(arg0: AdapterView<*>?, arg1: View, position2: Int, id: Long) {
-                if (position2>0)
-                    listOfData[2]=listOfMeliCods.get(position2-1)
-            }
-            override fun onNothingSelected(arg0: AdapterView<*>?) {
-            }
-        }
-
-        btn_makan_add_malek.setOnTouchListener(View.OnTouchListener { v, event ->
-            if (event.action == MotionEvent.ACTION_DOWN) {
-                btn_makan_add_malek.setImageResource(R.drawable.pushed_btn_plus)
-            }
-            if (event.action == MotionEvent.ACTION_UP) {
-                btn_makan_add_malek.setImageResource(R.drawable.btn_plus)
-            }
-            false
-        })
-        btn_makan_add_malek.setOnClickListener {
-            refrense_activity="sabtemakan"
-            val intent = Intent(this, ActivitySabteFard::class.java)
-            startActivity(intent)
-            fullfinish()
-
-        }
-
-
-
-
-        btn_sabtemakan.setOnTouchListener(View.OnTouchListener { v, event ->
-            if (event.action == MotionEvent.ACTION_DOWN) {
-                btn_sabtemakan.setImageResource(R.drawable.pushed_btn_next)
-            }
-            if (event.action == MotionEvent.ACTION_UP) {
-                btn_sabtemakan.setImageResource(R.drawable.btn_next)
-            }
-            false
-        })
-        btn_sabtemakan.setOnClickListener {
-
-//            var sqlq="INSERT INTO place(ostan,shahr,name_vahed,senf_vahed," +
-//                    "malek) " +
-//                    "VALUES ('"+ostan+"','"+city+"','"+sabt_makan_name.text.toString()+"','"+senff+"','"+ malek+"')";
-//
-//            try {
-//                database.execSQL(sqlq)
-//            }catch (e: NumberFormatException) {
-//                println("kodmelli")
-//
-//            }
-//
-
-            listOfData[4]= sabt_makan_name.text.toString()
-            val intent = Intent(this, ActivitySabteMakan2::class.java)
-            startActivity(intent)
-            fullfinish()
-        }
-
     }
-
-    override fun onBackPressed() {
-
-//        val intent = Intent(this, ActivitySabteFard2::class.java)
-//        startActivity(intent)
-//        fullfinish()
-
-    }
-
-    private fun citySpiner(){
-        sabt_makan_shahr.setTitle("جستجو و انتخاب کنید")
-        sabt_makan_shahr.setPositiveButton("تایید")
-        val spcity = findViewById(R.id.sabt_makan_shahr) as Spinner
-        val adaptercity: ArrayAdapter<String> = ArrayAdapter<String>(this,
-            android.R.layout.simple_dropdown_item_1line, citis[ostan_index])
-        adaptercity.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spcity.setAdapter(adaptercity)
-        spcity.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(arg0: AdapterView<*>?, arg1: View, position: Int, id: Long) {
-                listOfData[1]=citis[ostan_index].get(position)
-            }
-            override fun onNothingSelected(arg0: AdapterView<*>?) {
-            }
-        }
-
-    }
-
     private fun fullfinish(){
         b80.setImageDrawable(null)
         b81.setImageDrawable(null)

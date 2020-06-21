@@ -47,9 +47,12 @@ public class G extends Application {
                                             listOfSelectedMotorPelaks = new ArrayList<>(),
                                             listOfPelaks = new ArrayList<>(),
                                             listOfData= new ArrayList<>(),
+                                            listOfDataMakan= new ArrayList<>(),
                                             listOfPesons = new ArrayList<String>(),
                                             listOfCars = new ArrayList<String>(),
                                             listOfMotors = new ArrayList<String>();
+
+    public static ArrayList<Integer>        listOfMakanPositions = new ArrayList<>();
     public static ArrayList<Person>         listOfSelectedPersons = new ArrayList<Person>();
 
 

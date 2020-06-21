@@ -34,12 +34,12 @@ class ActivitySabteMakan2 : AppCompatActivity() {
                     "malek," +
                     "tozohat) " +
                     "VALUES ('"+
-                    listOfData[0]+"','"+
-                    listOfData[1]+"','"+
+                    listOfDataMakan[0]+"','"+
+                    listOfDataMakan[1]+"','"+
                     sabt_makan_adress.text.toString()+ "','"+
-                    listOfData[4]+"','"+
-                    listOfData[3]+"','"+
-                    listOfData[2]+ "','"+
+                    listOfDataMakan[4]+"','"+
+                    listOfDataMakan[3]+"','"+
+                    listOfDataMakan[2]+ "','"+
                     sabte_makan_comment.text.toString()+"')"
 
             try {
@@ -71,7 +71,7 @@ class ActivitySabteMakan2 : AppCompatActivity() {
         btn_sabte_makan2.setImageDrawable(null)
 
         sabt_makan2_main_layout.removeAllViews()
-        listOfData=null
+        listOfDataMakan.clear()
         finish()
 
     }
